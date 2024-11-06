@@ -23,7 +23,7 @@
         <input type="text">
         <br>
         <br>
-        <button>Registrar</button> <button>Registrar con Google</button>
+        <button>Registro</button> <button>Registrar con Google</button>
     </div>
 </body>
 </html>
