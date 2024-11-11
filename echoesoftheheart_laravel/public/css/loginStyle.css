@@ -1,10 +1,27 @@
 body{
+    background-image: url('/css/imagenes/image1.png');
+    background-size: auto;
+
     justify-content: center;
     align-items: center;
     display: flex;
+
 }
 .container{
+
      text-align: center;
+     width: 500px;
+     height: 500px;
+     padding: 5%;
+     background-image: url('/css/imagenes/login.png');
+     background-size: 100%;
+}
+#contenido{
+
+    ima
+    text-align: center;
+    margin-top: 5%;;
+
 }
 
 h1{
@@ -13,5 +30,5 @@ h1{
 
 h3{
 
-    
+
 }
