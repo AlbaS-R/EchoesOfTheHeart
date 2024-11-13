@@ -1,6 +1,12 @@
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+  }
+
 body{
     background-image: url('/css/imagenes/image1.png');
-    background-size: auto;
+    background-size: cover;
+    background-position: 70%;
 
     justify-content: center;
     align-items: center;
@@ -10,25 +16,58 @@ body{
 .container{
 
      text-align: center;
-     width: 500px;
-     height: 500px;
-     padding: 5%;
-     background-image: url('/css/imagenes/login.png');
+     justify-content: center;
+     display: flex;
+     width: 900px;
+     height: 900px;
+     background-image: url('/css/imagenes/loginSombreado.png');
      background-size: 100%;
+}
+.contenidor{
+
+    text-align: left;
+    font-family: GreekFont;
+    font-size: larger;
+    color: rgb(255, 161, 20);
 }
 #contenido{
 
-    ima
     text-align: center;
-    margin-top: 5%;;
+    margin-bottom: 20px;
 
 }
 
-h1{
+#logo{
+
+    margin-top: 55%;
+}
+
+input[type="text"] {
+
+    font-family: GreekFont;
+    font-size: larger;
+    background: transparent;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(255, 161, 20);
+  }
+
+#btnSend{
 
 }
 
-h3{
+#btnRgt{
 
+}
+
+#btnRgtGoogle{
+
+}
+
+
+h2{
+    font-size: larger;
+    font-family: GreekFont;
+    font-style: bold;
 
 }
