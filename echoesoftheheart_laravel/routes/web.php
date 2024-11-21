@@ -15,7 +15,7 @@ if (!empty($proxy_schema)) {
 
 // start editing here
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('login.login');});
 
 Route::get('/login', function () {return view('login.login');})->name('login');
 Route::get('/registrar', function () {return view('login.registro');})->name('registrar');
