@@ -1,8 +1,81 @@
-body{
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+  }
+
+body {
+    background-image: url('/css/imagenes/loginSombreado.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
+    height: 100vh; /* Hace que el body ocupe el 100% de la pantalla */
+    margin: 0;
 }
-.container{
-     text-align: center;
+
+.container {
+    width: 90%; /* Usa un ancho relativo para adaptarse a diferentes tamaños de pantalla */
+    max-width: 900px; /* Limita el ancho máximo */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    background-size: 100%;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    padding: 20px; /* Agrega espacio interno */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si hay poco espacio */
+}
+
+.usuario p {
+    margin-right: 10px;
+}
+
+#contenido {
+    width: 100%; /* Asegura que el contenido use todo el ancho disponible */
+    max-width: 600px; /* Limita el ancho del contenido */
+    font-family: GreekFont;
+    font-size: larger;
+    color: rgb(255, 161, 20);
+    text-align: left;
+}
+
+input[type="text"] {
+    font-family: GreekFont;
+    font-size: larger;
+    background: transparent;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(255, 161, 20);
+    margin-bottom: 20px;
+    width: 100%; /* Inputs ocupan todo el ancho disponible */
+}
+
+button {
+    font-family: GreekFont;
+    font-size: larger;
+    margin: 5px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los botones se ajusten si hay poco espacio */
+    gap: 10px; /* Espaciado uniforme entre botones */
+    margin-top: 20px;
+}
+
+.error{
+
+    font-family: GreekFont;
+
 }

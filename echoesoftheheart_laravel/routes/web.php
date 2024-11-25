@@ -1,21 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+use App\Http\Controllers\LoginController;
 
-$proxy_url    = getenv('PROXY_URL');
-$proxy_schema = getenv('PROXY_SCHEMA');
 
-if (!empty($proxy_url)) {
-   URL::forceRootUrl($proxy_url);
-}
+// Rutas principales
+Route::get('/', function () {return redirect('/login');});
 
-if (!empty($proxy_schema)) {
-    URL::forceScheme($proxy_schema);
-}
-
-// start editing here
-
-Route::get('/', function () {return view('login.login');});
-
+// Vistas de login y registro
 Route::get('/login', function () {return view('login.login');})->name('login');
 Route::get('/registrar', function () {return view('login.registro');})->name('registrar');
+
+// Procesos de autenticación
+Route::post('/login', [LoginController::class, 'login'])->name('processLogin');
+Route::post('/registrar', [LoginController::class, 'register'])->name('processRegister');
+
+
+// grupo de paginas protegidas por auth
+Route::group(['middleware' => ['auth']], function(){
+
+    Route::get('/home', function () {return view('home');})->name('home');
+
+});
