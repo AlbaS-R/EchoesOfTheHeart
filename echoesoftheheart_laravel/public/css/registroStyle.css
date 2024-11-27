@@ -49,7 +49,7 @@ body {
     text-align: left;
 }
 
-input[type="text"] {
+input {
     font-family: GreekFont;
     font-size: larger;
     background: transparent;
@@ -59,6 +59,8 @@ input[type="text"] {
     margin-bottom: 20px;
     width: 100%; /* Inputs ocupan todo el ancho disponible */
 }
+
+
 
 button {
     font-family: GreekFont;

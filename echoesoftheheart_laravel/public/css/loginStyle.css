@@ -42,15 +42,16 @@ body{
     margin-top: 55%;
 }
 
-input[type="text"] {
-
+input {
     font-family: GreekFont;
     font-size: larger;
     background: transparent;
     outline: 0;
     border-width: 0 0 2px;
     border-color: rgb(255, 161, 20);
-  }
+    margin-bottom: 20px;
+    width: 100%; /* Inputs ocupan todo el ancho disponible */
+}
 
 #btnSend{
 
