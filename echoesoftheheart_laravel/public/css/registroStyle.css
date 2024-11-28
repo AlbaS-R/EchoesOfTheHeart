@@ -4,6 +4,7 @@
   }
 
 body {
+    background-color: rgb(238, 216, 169);
     background-image: url('/css/imagenes/loginSombreado.png');
     background-size: cover;
     background-position: center;
@@ -32,6 +33,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: 50px;
     margin-bottom: 20px;
     flex-wrap: wrap; /* Permite que los elementos se ajusten si hay poco espacio */
 }
@@ -41,18 +43,20 @@ body {
 }
 
 #contenido {
+
     width: 100%; /* Asegura que el contenido use todo el ancho disponible */
     max-width: 600px; /* Limita el ancho del contenido */
     font-family: GreekFont;
-    font-size: larger;
+    font-size: x-large;
     color: rgb(255, 161, 20);
     text-align: left;
 }
 
 input {
+    text-align: center;
     font-family: GreekFont;
-    font-size: larger;
     background: transparent;
+    font-size: x-large;
     outline: 0;
     border-width: 0 0 2px;
     border-color: rgb(255, 161, 20);

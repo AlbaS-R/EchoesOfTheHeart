@@ -22,12 +22,16 @@
                 </div>
                 <br>
                 <div class="botones">
-                    <button id="btnSend" type="submit" style="border: none; background: none;">
+                    <!-- Botón de enviar -->
+                    <button id="btnSend" type="submit" style="border: none; background: none; position: relative;">
                         <img src="{{ asset('images/login/botón.png') }}" alt="Enviar" style="width: 150px; height: auto;">
+                        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(201, 82, 13); font-weight: bold; font-size: 16px; font-family:GreekFont;">Enviar</span>
                     </button>
 
-                    <a id="btnRegister" href="{{route('registrar')}}" style="border: none; background: none;">
+                    <!-- Botón de registrar -->
+                    <a id="btnRegister" href="{{route('registrar')}}" style="border: none; background: none; position: relative; display: inline-block;">
                         <img src="{{ asset('images/login/botón.png') }}" alt="Registrar" style="width: 150px; height: auto;">
+                        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(201, 82, 13); font-weight: bold; font-size: 16px; font-family:GreekFont;">Registrar</span>
                     </a>
                 </div>
                 <script src="src/login.js"></script>
