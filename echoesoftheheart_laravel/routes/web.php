@@ -12,6 +12,9 @@ Route::get('/', function () {return redirect('/login');});
 Route::get('/login', function () {return view('login.login');})->name('login');
 Route::get('/registrar', function () {return view('login.registro');})->name('registrar');
 
+//Vista al inicio
+Route::get('/inicio', function () {return view('inici.principal');});
+
 // Procesos de autenticación
 Route::post('/login', [LoginController::class, 'login'])->name('processLogin');
 Route::post('/registrar', [LoginController::class, 'register'])->name('processRegister');

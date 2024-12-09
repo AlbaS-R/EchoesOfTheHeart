@@ -1,0 +1,38 @@
+body{
+    background-image: url('/css/imagenes/image1.png');
+    background-size: cover;
+    background-position: 70%;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+/* public/css/inicioStyle.css */
+
+/* Aseguramos que la imagen se ajuste al tamaño de la pantalla */
+.img1 {
+
+    width: auto; /* 100% del ancho de la pantalla */
+    height: 100vh; /* 100% de la altura de la pantalla */
+    object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto */
+    position: absolute; /* Posicionamos la imagen de manera absoluta */
+    left: 0; /* Alineamos la imagen a la izquierda */
+    top: 0; /* Alineamos la imagen a la parte superior */
+}
+
+.img2 {
+
+    width: auto; /* 100% del ancho de la pantalla */
+    height: 100vh; /* 100% de la altura de la pantalla */
+    object-fit: cover; /* Ajusta la imagen manteniendo la relación de aspecto */
+    position: absolute; /* Posicionamos la imagen de manera absoluta */
+    right: 0; /* Alineamos la imagen a la izquierda */
+    top: 0; /* Alineamos la imagen a la parte superior */
+}
+
+/* Opcional: para que el resto del contenido no se superponga a la imagen */
+.usuario, .contenido {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté por encima de la imagen */
+}
