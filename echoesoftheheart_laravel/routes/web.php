@@ -17,8 +17,9 @@ Route::get('/registrar', function () {return view('login.registro');})->name('re
 Route::post('/logout', function () {Auth::logout(); return redirect('/');})->name('logout');
 
 
-//Vista al inicio
-Route::get('/inicio', function () {return view('inici.principal');})->name('Inici');
+
+
+
 
 // Procesos de autenticación
 Route::post('/login', [LoginController::class, 'login'])->name('processLogin');
@@ -28,6 +29,13 @@ Route::post('/registrar', [LoginController::class, 'register'])->name('processRe
 // grupo de paginas protegidas por auth
 Route::group(['middleware' => ['auth']], function(){
 
+//Rutas de paginas
     Route::get('/inicio', function () {return view('inici.principal');})->middleware('auth');
+    Route::get('/capitulos', function () {return view('capitulos.p_capitulos');})->name('Capitulos');
+    Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('Imagenes');
+    Route::get('/personajes', function () {return view('personajes.p_personajes');})->name('Personajes');
+    Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('Perfil');
+    Route::get('/armario', function () {return view('perfil.p_armario');})->name('Armario');
+    Route::get('/juego', function () {return view('juego.p_juego');})->name('Juego');
 
 });
