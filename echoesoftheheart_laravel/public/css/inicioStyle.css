@@ -27,7 +27,7 @@ body {
     /* Ajusta la imagen manteniendo la relación de aspecto */
     position: absolute;
     /* Posicionamos la imagen de manera absoluta */
-    left: 500px;
+    left: 400px;
     /* Alineamos la imagen a la izquierda */
     top: 0;
     /* Alineamos la imagen a la parte superior */
@@ -44,13 +44,13 @@ body {
     /* Ajusta la imagen manteniendo la relación de aspecto */
     position: absolute;
     /* Posicionamos la imagen de manera absoluta */
-    right: 500px;
+    right: 400px;
     /* Alineamos la imagen a la derecha */
     top: 0;
     /* Alineamos la imagen a la parte superior */
 }
 
-
+/* Contenido del header empieza aquí*/
 .usuario {
     position: absolute;
     top: 0%;
@@ -58,9 +58,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     /* Centrado horizontalmente */
-    width: 650px;
+    width: 900px;
     /* Ancho del contenedor */
-    height: 650px;
+    height: 900px;
     /* Alto del contenedor */
     padding: 20px;
     background-image: url('/css/imagenes/heading.png');
@@ -79,7 +79,7 @@ body {
 /* Ajuste de la posición del texto en .name */
 .name {
     font-family: GreekFont;
-    font-size: 24px;
+    font-size: 45px;
     font-weight: bold;
     color: rgb(255, 195, 0);
     margin-bottom: 20px;
@@ -90,6 +90,7 @@ body {
 /* Ajuste de la posición del texto en .stats */
 .stats {
     display: flex;
+    text-align: center;
     justify-content: center;
     gap: 20px;
     /* Espaciado entre elementos */
@@ -101,28 +102,35 @@ body {
 
 
 .stat-item {
+    top: 10px;
+    text-align: center;
     font-family: GreekFont;
     flex: 1;
     background-color: rgba(255, 255, 255, 0.72);
+    height: 40px;
+    width: 90px;
     /* Blanco con 72% opacidad */
-    padding: 15px;
+
     border-radius: 8px;
-    text-align: center;
+
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     /* Sombra para estética */
-    font-size: 18px;
+    font-size: 30px;
     color: rgb(255, 195, 0);
 }
 
+/* Contenido del header acaba aquí*/
+
+/* Contenido del inicio empieza aquí*/
 
 .contenido {
-    margin-top: 120px;
+    margin-top: 170px;
     text-align: center;
     position: relative;
     z-index: 1;
     /* Asegura que el contenido esté por encima de la imagen de fondo */
     background-color: rgba(255, 238, 223, 0.7);
-    width: 670px;
+    width: 900px;
     /* Ancho del contenedor */
     height: 550px;
     /* Alto del contenedor */
@@ -154,8 +162,55 @@ body {
     /* Jarrón encima del pergamino */
 }
 
+.primero, .segundo {
+    display: flex;
+    position: absolute;
+    width: 200px; /* Ajustado al tamaño real del jarrón */
+    height: 421px; /* Ajustado al tamaño real del jarrón */
+    z-index: 2;
+    margin-top: -10px; /* Ajusta la altura para que quede por encima del pergamino */
+}
+
+.primero {
+    right: 0; /* Posicionado a la derecha */
+}
+
+.segundo {
+    right: 0; /* Posicionado a la derecha */
+     /* Ajusta la altura para que quede por encima del pergamino */
+}
+
+.rectangle1, .rectangle2 {
+    position: absolute;
+    top: 0;
+    right: 0; /* Rectángulos alineados completamente al borde derecho */
+    width: 300px; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    z-index: 1; /* Detrás de las elipses */
+}
+
+.ellipse1, .ellipse2 {
+    position: absolute;
+    width: auto; /* Ajusta para que la elipse sobresalga del borde izquierdo */
+    height: 422px; /* Mantiene la proporción */
+    top: 50%; /* Centra verticalmente dentro del rectángulo */
+    right: 120px; /* Sobresale hacia el borde izquierdo */
+    transform: translateY(-50%); /* Ajusta para centrar verticalmente */
+    z-index: 2; /* Encima del rectángulo */
+}
+
+.rectangle1{
+
+    right: 30px;
+
+}
+.ellipse1 {
+
+    right: 170px;
+}
+
 .imgPrg {
-    width: 500px;
+    width: 700px;
     /* Ancho del pergamino */
     height: 405px;
     /* Mantiene la proporción de la imagen */
@@ -168,6 +223,54 @@ body {
     margin-top: 6px;
     /* Ajuste vertical para que el pergamino quede debajo del jarrón */
 }
+
+.menuPrn {
+    position: relative;
+    width: 200px; /* Ancho para contener el arco lateral */
+    height: 400px; /* Ajusta según el tamaño del semicírculo */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+}
+
+.menuPrn img {
+    position: absolute; /* Permite posicionar las imágenes libremente */
+    width: 70px; /* Tamaño de las imágenes */
+    height: auto; /* Mantiene proporción */
+    transform-origin: center center; /* Punto de rotación para que las imágenes giren alrededor de su centro */
+    z-index: 3;
+}
+
+/* Posicionamiento en un semicírculo lateral */
+.menuPrn a:nth-child(1) img {
+    rotate: 50px;
+    top: 2%; /* Posición superior */
+    right: 335px; /* Mueve hacia el centro del contenedor */
+
+}
+
+.menuPrn a:nth-child(2) img {
+    top: 20%; /* Progresión hacia abajo */
+    right: 390px; /* Curva lateral hacia la derecha */
+
+}
+
+.menuPrn a:nth-child(3) img {
+    top: 40%; /* Mitad del contenedor */
+    right: 400px;
+
+}
+
+.menuPrn a:nth-child(4) img {
+    top: 60%;/* Progresión hacia abajo */
+    right: 390px;
+
+}
+
+.menuPrn a:nth-child(5) img {
+    top: 80%; /* Posición inferior */
+    right: 350px;
+
+}
+
 
 
 .imgDiv {
@@ -184,6 +287,8 @@ body {
     z-index: 0;
     /* Asegura que el divisor esté debajo de las otras imágenes */
 }
+
+/* Contenido del inicio acaba aquí*/
 
 .logout-button {
     position: absolute;
@@ -227,7 +332,7 @@ body {
     /* Espacio adicional */
     position: relative;
     background-color: rgba(255, 238, 223, 0.7);
-    width: 650px;
+    width: 870px;
     padding: 10px;
     text-align: center;
 
@@ -253,8 +358,9 @@ body {
     width: 100%;
     /* Puedes ajustar el tamaño del divisor si es necesario */
     z-index: 0;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
+
 .todo {
     flex: 1;
     display: flex;
