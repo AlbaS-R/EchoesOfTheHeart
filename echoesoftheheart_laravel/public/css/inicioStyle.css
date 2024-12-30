@@ -60,7 +60,7 @@ body {
     /* Centrado horizontalmente */
     width: 900px;
     /* Ancho del contenedor */
-    height: 900px;
+    height: 160px;
     /* Alto del contenedor */
     padding: 20px;
     background-image: url('/css/imagenes/heading.png');
@@ -229,6 +229,7 @@ body {
     width: 200px; /* Ancho para contener el arco lateral */
     height: 400px; /* Ajusta según el tamaño del semicírculo */
     margin: 0 auto; /* Centra horizontalmente el contenedor */
+    z-index: 10;
 }
 
 .menuPrn img {
@@ -237,6 +238,17 @@ body {
     height: auto; /* Mantiene proporción */
     transform-origin: center center; /* Punto de rotación para que las imágenes giren alrededor de su centro */
     z-index: 3;
+}
+
+.menuPrn a {
+    display: inline-block;
+    width: 70px; /* Tamaño del enlace acorde al tamaño de las imágenes */
+    height: 70px; /* Ajustar según sea necesario */
+    z-index: 3;
+}
+
+.menuPrn a img {
+    pointer-events: auto;
 }
 
 /* Posicionamiento en un semicírculo lateral */

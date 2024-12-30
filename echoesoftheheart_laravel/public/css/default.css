@@ -1,0 +1,222 @@
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+}
+
+body {
+    background-image: url('/css/imagenes/image1.png');
+    background-size: cover;
+    background-position: 70%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+
+
+}
+
+/* public/css/inicioStyle.css */
+
+/* Aseguramos que la imagen se ajuste al tamaño de la pantalla */
+.img1 {
+    width: auto;
+    /* Mantiene el ancho de la imagen automáticamente según su proporción */
+    height: 141vh;
+    /* 100% de la altura de la pantalla */
+    object-fit: cover;
+    /* Ajusta la imagen manteniendo la relación de aspecto */
+    position: absolute;
+    /* Posicionamos la imagen de manera absoluta */
+    left: 400px;
+    /* Alineamos la imagen a la izquierda */
+    top: 0;
+    /* Alineamos la imagen a la parte superior */
+    overflow-y: scroll;
+    /* Vertical scroll */
+}
+
+.img2 {
+    width: auto;
+    /* Mantiene el ancho de la imagen automáticamente según su proporción */
+    height: 141vh;
+    /* 100% de la altura de la pantalla */
+    object-fit: cover;
+    /* Ajusta la imagen manteniendo la relación de aspecto */
+    position: absolute;
+    /* Posicionamos la imagen de manera absoluta */
+    right: 400px;
+    /* Alineamos la imagen a la derecha */
+    top: 0;
+    /* Alineamos la imagen a la parte superior */
+}
+
+/* Contenido del header empieza aquí*/
+.usuario {
+    position: absolute;
+    top: 0%;
+    /* Alineado en el top de la página */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centrado horizontalmente */
+    width: 900px;
+    /* Ancho del contenedor */
+    height: 900px;
+    /* Alto del contenedor */
+    padding: 20px;
+    background-image: url('/css/imagenes/heading.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    /* Alinea los elementos verticalmente */
+    align-items: center;
+    text-align: center;
+}
+
+
+
+/* Ajuste de la posición del texto en .name */
+.name {
+    font-family: GreekFont;
+    font-size: 45px;
+    font-weight: bold;
+    color: rgb(255, 195, 0);
+    margin-bottom: 20px;
+    margin-top: -10px;
+    /* Levanta ligeramente la letra */
+}
+
+/* Ajuste de la posición del texto en .stats */
+.stats {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    /* Espaciado entre elementos */
+    width: 100%;
+    margin-top: -5px;
+    /* Levanta la fila de estadísticas */
+}
+
+
+
+.stat-item {
+    top: 10px;
+    text-align: center;
+    font-family: GreekFont;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.72);
+    height: 40px;
+    width: 90px;
+    /* Blanco con 72% opacidad */
+
+    border-radius: 8px;
+
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para estética */
+    font-size: 30px;
+    color: rgb(255, 195, 0);
+}
+
+.logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+}
+
+.logout-button button {
+    margin-right: 120px;
+    background-color: rgb(255, 195, 0);
+    /* Color de fondo del botón */
+    font-family: GreekFont;
+    color: white;
+    /* Color del texto */
+    border: none;
+    border-radius: 50%;
+    /* Hace el botón circular */
+    width: 25px;
+    /* Ancho del botón */
+    height: 25px;
+    /* Alto del botón */
+    font-size: 14px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button button:hover {
+    background-color: rgb(189, 148, 15)
+        /* Cambia de color al pasar el mouse */
+}
+
+/* Contenido del header acaba aquí*/
+
+/* Contenido del inicio empieza aquí*/
+
+.contenido {
+    margin-top: -80px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    /* Asegura que el contenido esté por encima de la imagen de fondo */
+    background-color: rgba(255, 238, 223, 0.7);
+    height: auto;
+    min-height: 550px;
+    /* Alto del contenedor */
+    display: flex;
+    /* Usamos Flexbox para alinear las imágenes horizontalmente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: flex-start;
+    /* Alinea las imágenes en la parte superior */
+    padding: 20px;
+    /* Añade algo de espacio dentro del contenedor */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte al tamaño total */
+
+}
+.menu {
+
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    margin-top: 130px; /* Añade margen superior para separar del contenido anterior */
+    z-index: 3;
+}
+
+.menu img{
+
+    width: 150px;
+
+}
+
+.todo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Alinea los elementos hijos verticalmente */
+    align-items: center;
+    /* Centra horizontalmente los hijos */
+
+}
+
+.footer {
+    height: 125px;
+    bottom: 0px;
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    width: 1880px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 238, 223, 0.7);
+
+}

@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    gap: 100px;
+    margin-top: 120px; /* Espaciado vertical entre las clases */
+    margin-bottom: 30px;
+}
+
+.pj_1, .pj_2, .pj_3, .pj_4 {
+
+    background-image: url('/css/imagenes/pjs/pjs_desc.png');
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
+    background-repeat: no-repeat;
+    width: 808px;
+    height: 275px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    color: rgb(0, 0, 0); /* Texto visible sobre la imagen de fondo */
+}
+
+.n_1, .n_2, .n_3, .n_4{
+    position:absolute;
+    z-index: 3;
+    width: 300px;
+    height: 150px;
+}
+
+.n_1{
+    top:85px;
+    left: 10px;
+}
+
+.n_2{
+    top: 460px;
+    left: 10px;
+}
+
+.n_3{
+    top: 835px;
+    left: 10px;
+}
+
+.n_4{
+    top: 1210px;
+    left: 10px;
+}

@@ -36,20 +36,26 @@
             <img class="imgJrrn" src="{{ asset('images/principal/jarrón.png') }}" alt="Jarrón Principal">
             <img class="imgPrg" src="{{ asset('images/principal/pergaminoMain.png') }}" alt="Pergamino Main">
             <div class="menuPrn">
-                <a id="btnH" href="">
+                <a class="btnH" href="{{ route('juego') }}">
                     <img src="{{ asset('images/principal/Btn/btnM1.png') }}" alt="Historia">
                 </a>
-                <a id="btnC" href="">
+                <a id="btnC" href="{{ route('capitulos') }}">
                     <img src="{{ asset('images/principal/Btn/btnM2.png') }}" alt="Capitulos">
+
                 </a>
-                <a id="btnU" href="">
+                <a id="btnU" href="{{ route('perfil') }}">
                     <img src="{{ asset('images/principal/Btn/btnM3.png') }}" alt="Perfil">
+
                 </a>
-                <a id="btnI" href="">
+                <a id="btnI" href="{{ route('imagenes') }}">
                     <img src="{{ asset('images/principal/Btn/btnM4.png') }}" alt="Imagenes">
+
+
                 </a>
-                <a id="btnP" href="">
+                <a id="btnP" href="{{ route('personajes') }}">
                     <img src="{{ asset('images/principal/Btn/btnM5.png') }}" alt="Personajes">
+
+
                 </a>
             </div>
             <div class="primero">

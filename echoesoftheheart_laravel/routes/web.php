@@ -30,12 +30,12 @@ Route::post('/registrar', [LoginController::class, 'register'])->name('processRe
 Route::group(['middleware' => ['auth']], function(){
 
 //Rutas de paginas
-    Route::get('/inicio', function () {return view('inici.principal');})->middleware('auth');
-    Route::get('/capitulos', function () {return view('capitulos.p_capitulos');})->name('Capitulos');
-    Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('Imagenes');
-    Route::get('/personajes', function () {return view('personajes.p_personajes');})->name('Personajes');
-    Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('Perfil');
-    Route::get('/armario', function () {return view('perfil.p_armario');})->name('Armario');
-    Route::get('/juego', function () {return view('juego.p_juego');})->name('Juego');
+    Route::get('/inicio', function () {return view('inici.principal');})->middleware('auth') ->name('inicio');
+    Route::get('/capitulos', function () {return view('capitulos.p_capitulos');})->name('capitulos');
+    Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('imagenes');
+    Route::get('/personajes', function () {return view('personajes.p_personajes');})->name('personajes');
+    Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('perfil');
+    Route::get('/armario', function () {return view('perfil.p_armario');})->name('armario');
+    Route::get('/juego', function () {return view('juego.p_juego');})->name('juego');
 
 });
