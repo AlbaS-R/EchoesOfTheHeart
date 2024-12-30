@@ -166,6 +166,7 @@ body {
     z-index: 1;
     /* Asegura que el contenido esté por encima de la imagen de fondo */
     background-color: rgba(255, 238, 223, 0.7);
+    width: 900px;
     height: auto;
     min-height: 550px;
     /* Alto del contenedor */

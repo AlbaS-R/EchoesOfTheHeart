@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Espaciado entre filas */
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+.row {
+    position: relative; /* Permite que los hijos sean posicionados relativamente a esta fila */
+    width: 743px; /* Ajustar al tamaño del div */
+    height: 349px; /* Ajustar al tamaño del div */
+}
+
+/* Estilo de las imágenes */
+img.tuto, img.cap1, img.cap2 {
+    position: absolute; /* Posiciona la imagen dentro de la fila */
+    top: -80px; /* Ajusta la superposición vertical sobre el div */
+    margin-left: -510px; /* Superposición en el borde izquierdo */
+    width: 500px; /* Tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+    z-index: 2; /* Asegura que la imagen esté encima del div */
+}
+
+img.cap1{
+    top: 468px;
+}
+
+img.cap2{
+    top: 1017px;
+}
+/* Estilo de los divs */
+.cap_0, .cap_1, .cap_2 {
+    background-image: url('/css/imagenes/cap/imgPrg2.png');
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
+    background-repeat: no-repeat;
+    width: 743px;
+    height: 349px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 1; /* Asegura que el div esté debajo de la imagen */
+    margin-right: -155px;
+}
+
+

@@ -15,6 +15,17 @@
             <form action="{{ route('processLogin') }}" method="POST">
                 @csrf
                 <img src="{{ asset('images/login/logo.png') }}" style="width: 250px;" id="logo" />
+
+                @if ($errors->any())
+                    <div style="color: red; background-color:rgba(0, 0, 0, 0.178)">
+
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+
+                    </div>
+                @endif
+
                 <div class="contenidor">
                     <p>Email</p>
                     <input type="text" name="email" required>
@@ -22,15 +33,7 @@
                     <p>Contraseña</p>
                     <input type="password" name="password" required>
                 </div>
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+
                 <div class="botones">
                     <!-- Botón de enviar -->
                     <button id="btnSend" type="submit" style="border: none; background: none; position: relative;">
