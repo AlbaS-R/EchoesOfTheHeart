@@ -1,0 +1,63 @@
+.contenedor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 200px; /* Espaciado entre filas */
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.fila {
+    position: relative; /* Permite que los hijos sean posicionados relativamente a esta fila */
+    width: 743px; /* Ajustar al tamaño del div */
+    height: 349px; /* Ajustar al tamaño del div */
+}
+
+.cap0, .cap1{
+    background-image: url('/css/imagenes/galeria/imgPrg3.png');
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
+    background-repeat: no-repeat;
+    width: 821px;
+    height: 349px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 1; /* Asegura que el div esté debajo de la imagen */
+    margin-right: -155px;
+}
+
+img.jrrnTuto, img.jrrnCap1{
+    width: 300px;
+    position: absolute; /* Posiciona la imagen dentro de la fila */
+    top: -80px; /* Ajusta la superposición vertical sobre el div */
+    margin-left: -450px; /* Superposición en el borde izquierdo */
+    height: auto; /* Mantiene la proporción */
+    z-index: 2; /* Asegura que la imagen esté encima del div */
+}
+
+.imgsTuto {
+    display: flex;
+    gap: 10px; /* Espaciado entre las imágenes */
+    justify-content: flex-end; /* Alinea las imágenes a la derecha */
+    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan */
+    margin-right:-100px;
+}
+
+.imgsTuto img {
+    width: 250px; /* Tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.titulos{
+    display: flex;
+    margin-top: -90px;
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para mayor visibilidad */
+    color: white; /* Color del texto */
+    font-family: GreekFont;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+    pointer-events: none;
+
+}

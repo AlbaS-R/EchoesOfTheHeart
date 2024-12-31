@@ -1,3 +1,7 @@
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+}
 .container {
     position: relative;
     display: flex;
@@ -7,11 +11,6 @@
     margin-bottom: 30px;
 }
 
-.row {
-    position: relative; /* Permite que los hijos sean posicionados relativamente a esta fila */
-    width: 743px; /* Ajustar al tamaño del div */
-    height: 349px; /* Ajustar al tamaño del div */
-}
 
 /* Estilo de las imágenes */
 img.tuto, img.cap1, img.cap2 {
@@ -64,6 +63,7 @@ img.cap2{
     font-size: 30px; /* Tamaño del texto */
     font-weight: bold; /* Negrita para mayor visibilidad */
     color: white; /* Color del texto */
+    font-family: GreekFont;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
     z-index: 3; /* Asegura que el texto esté encima de la imagen */
     pointer-events: none; /* Hace que el texto no sea interactivo */
