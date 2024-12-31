@@ -46,4 +46,33 @@ img.cap2{
     margin-right: -155px;
 }
 
+.cap_0 .btnTuto,
+.cap_1 .btnCap1,
+.cap_2 .btnCap2 {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    bottom: 70px; /* Ajusta la distancia desde la parte inferior */
+    right: 10px; /* Ajusta la distancia desde la derecha */
+}
 
+.overlay-text {
+    position: absolute; /* Posiciona el texto relativo al contenedor de la fila */
+    top: 120px; /* Ajusta la posición vertical del texto */
+    left: 40px; /* Centra el texto horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro del texto */
+    font-size: 30px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para mayor visibilidad */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+    z-index: 3; /* Asegura que el texto esté encima de la imagen */
+    pointer-events: none; /* Hace que el texto no sea interactivo */
+}
+
+.tit1{
+    margin-top: 550px;
+}
+
+.tit2{
+    margin-top: 1100px;
+}

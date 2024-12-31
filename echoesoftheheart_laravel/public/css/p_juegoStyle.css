@@ -1,0 +1,43 @@
+.juego{
+    background-image: url('/css/imagenes/juego/fondo.png');
+    background-size: cover;
+    width: 1082px;
+    height: 800px;
+}
+
+.dialogo {
+    position: relative; /* Cambiar a relative para que los elementos hijos puedan usar z-index */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 323px;
+}
+
+.dialogo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.m_dialogo {
+    margin-top: 320px;
+    width: 860px;
+    height: 800px;
+    position: relative; /* Asegura que esté en la misma pila */
+    z-index: 1;
+}
+
+.marco {
+    position: absolute;
+    width: 300px;
+    margin-left: -30px;
+    margin-top: 220px;
+    z-index: 3; /* Marco está encima */
+}
+
+.e_marco {
+    position: absolute;
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    margin-left: 20px; /* Ajusta la posición horizontal */
+    margin-top: 250px; /* Ajusta la posición vertical */
+    z-index: 2; /* Debajo del marco pero encima de m_dialogo */
+}
