@@ -1,8 +1,9 @@
 .juego{
     background-image: url('/css/imagenes/juego/fondo.png');
     background-size: cover;
-    width: 1082px;
+    width: 1200px;
     height: 800px;
+    bottom: 0px;
 }
 
 .dialogo {
@@ -20,7 +21,7 @@
 
 .m_dialogo {
     margin-top: 320px;
-    width: 860px;
+    width: 960px;
     height: 800px;
     position: relative; /* Asegura que esté en la misma pila */
     z-index: 1;
@@ -28,9 +29,9 @@
 
 .marco {
     position: absolute;
-    width: 300px;
-    margin-left: -30px;
-    margin-top: 220px;
+    width: 350px;
+    margin-left: -50px;
+    margin-top: 190px;
     z-index: 3; /* Marco está encima */
 }
 

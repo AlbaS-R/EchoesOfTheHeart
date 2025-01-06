@@ -18,6 +18,7 @@
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center; /* Centra el contenido verticalmente */
     color: rgb(0, 0, 0); /* Texto visible sobre la imagen de fondo */
+    left: 80px;
 }
 
 .n_1, .n_2, .n_3, .n_4{
@@ -29,20 +30,20 @@
 
 .n_1{
     top:85px;
-    left: 10px;
+    left: 20px;
 }
 
 .n_2{
     top: 460px;
-    left: 10px;
+    left: 20px;
 }
 
 .n_3{
     top: 835px;
-    left: 10px;
+    left: 20px;
 }
 
 .n_4{
     top: 1210px;
-    left: 10px;
+    left: 20px;
 }

@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MainController;
 
 
 
@@ -29,8 +30,8 @@ Route::post('/registrar', [LoginController::class, 'register'])->name('processRe
 // grupo de paginas protegidas por auth
 Route::group(['middleware' => ['auth']], function(){
 
-//Rutas de paginas
-    Route::get('/inicio', function () {return view('inici.principal');})->middleware('auth') ->name('inicio');
+    //Rutas de paginas
+    Route::get('/inicio', [MainController::class, 'getInicio'])->name('inicio');
     Route::get('/capitulos', function () {return view('capitulos.p_capitulos');})->name('capitulos');
     Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('imagenes');
     Route::get('/personajes', function () {return view('personajes.p_personajes');})->name('personajes');

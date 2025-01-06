@@ -42,7 +42,7 @@ img.cap2{
     color: rgb(0, 0, 0);
     position: relative;
     z-index: 1; /* Asegura que el div esté debajo de la imagen */
-    margin-right: -155px;
+    margin-right: -255px;
 }
 
 .cap_0 .btnTuto,
@@ -58,7 +58,7 @@ img.cap2{
 .overlay-text {
     position: absolute; /* Posiciona el texto relativo al contenedor de la fila */
     top: 120px; /* Ajusta la posición vertical del texto */
-    left: 40px; /* Centra el texto horizontalmente */
+    left: 10px; /* Centra el texto horizontalmente */
     transform: translateX(-50%); /* Ajusta el centro del texto */
     font-size: 30px; /* Tamaño del texto */
     font-weight: bold; /* Negrita para mayor visibilidad */

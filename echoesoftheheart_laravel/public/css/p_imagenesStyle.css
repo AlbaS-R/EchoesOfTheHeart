@@ -17,7 +17,7 @@
     background-image: url('/css/imagenes/galeria/imgPrg3.png');
     background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
     background-repeat: no-repeat;
-    width: 821px;
+    width: 921px;
     height: 349px;
     display: flex;
     justify-content: center; /* Centra el contenido horizontalmente */
@@ -25,14 +25,14 @@
     color: rgb(0, 0, 0);
     position: relative;
     z-index: 1; /* Asegura que el div esté debajo de la imagen */
-    margin-right: -155px;
+    right: 50px;
 }
 
 img.jrrnTuto, img.jrrnCap1{
     width: 300px;
     position: absolute; /* Posiciona la imagen dentro de la fila */
     top: -80px; /* Ajusta la superposición vertical sobre el div */
-    margin-left: -450px; /* Superposición en el borde izquierdo */
+    margin-left: -500px; /* Superposición en el borde izquierdo */
     height: auto; /* Mantiene la proporción */
     z-index: 2; /* Asegura que la imagen esté encima del div */
 }

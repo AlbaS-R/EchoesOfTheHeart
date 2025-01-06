@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    background-image: url(/css/imagenes/perfil/perfil.png);
+    background-size: cover;
+    width: 1000px;
+    height: 900px;
+    margin-top: 50px;
+    margin-left: -100px;
+
+}
