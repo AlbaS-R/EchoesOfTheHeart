@@ -47,7 +47,7 @@ return new class extends Migration
             $table->string('url_musica');
             $table->foreignId('personaje_id')->nullable();
 
-            $table->string('html');
+            $table->text('html');
 
             $table->foreign('capitulo_id')->references('id')->on('capitulos');
             $table->foreign('personaje_id')->references('id')->on('personajes');

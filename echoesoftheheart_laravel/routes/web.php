@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\GameController;
 
 
 
@@ -37,6 +38,10 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/personajes', function () {return view('personajes.p_personajes');})->name('personajes');
     Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('perfil');
     Route::get('/armario', function () {return view('perfil.p_armario');})->name('armario');
-    Route::get('/juego', function () {return view('juego.p_juego');})->name('juego');
+
+    // the game
+    Route::get('/juego', [GameController::class, 'play'])->name('juego');
+    Route::post('/juego/siguiente', [GameController::class, 'siguiente']);
+
 
 });

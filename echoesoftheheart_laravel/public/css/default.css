@@ -41,7 +41,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 900px;
-    height: 900px;
+    height: 160px;
     padding: 20px;
     background-image: url('/css/imagenes/heading.png');
     background-repeat: no-repeat;

@@ -14,8 +14,16 @@ class TutorialSeeder extends Seeder
     public function run(): void
     {
         DB::table('capitulos')->insert([
-            'titulo' => "Tutorial",
-            'texto' => "El tutorial",
+            'nombre' => "Tutorial",
+            'descripcion' => "El tutorial",
+        ]);
+
+        // =========== personajes ===========
+        DB::table('personajes')->insert([
+            'nombre' => "tu",
+            'descripcion' => "that's me",
+            'url_img' => "about:blank",
+            'tipo' => "normal",
         ]);
 
         // =========== personajes ===========
@@ -40,124 +48,7 @@ class TutorialSeeder extends Seeder
             'tipo' => "normal",
         ]);
 
-        // =========== textaco ===========
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
 
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "2",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "",
-            'html' => "[Escucho una suave voz que atraviesa la oscuridad.]",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "3",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "No lo haré dos veces. Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "4",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "",
-            'html' => "[Abro los ojos lentamente. La pantalla se desvanece del negro, y frente a mí aparece un paisaje. Una mujer está de pie al fondo, observándome.]",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
-        DB::table('dialogos')->insert([
-            'capitulo_id' => "1",
-            'orden' => "1",
-            'tipo' => "texto",
-            'url_fondo' => "about:blank",
-            'url_musica' => "about:blank",
-            'personaje_id' => "1",
-            'html' => "Despierta.",
-        ]);
+
     }
 }

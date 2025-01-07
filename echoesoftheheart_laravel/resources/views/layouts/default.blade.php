@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <script src="/js/jquery-3.7.1.min.js"></script>
     <title>Inicio</title>
 </head>
 <body>
@@ -80,6 +82,7 @@
 
             <p>ejemplo</p>
         </div>
+
     </div>
 </body>
 </html>

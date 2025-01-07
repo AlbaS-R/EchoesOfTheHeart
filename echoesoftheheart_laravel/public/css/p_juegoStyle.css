@@ -1,3 +1,8 @@
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+}
+
 .juego{
     background-image: url('/css/imagenes/juego/fondo.png');
     background-size: cover;
@@ -41,4 +46,25 @@
     margin-left: 20px; /* Ajusta la posición horizontal */
     margin-top: 250px; /* Ajusta la posición vertical */
     z-index: 2; /* Debajo del marco pero encima de m_dialogo */
+}
+
+#text {
+    border-radius: 5px;
+    width: 600px;
+    height: auto;
+    text-align: left;
+    position: absolute;
+    z-index: 4;
+    margin-left: 300px;
+    top: 390px;
+    left: 30px;
+    background-color: rgba(236, 160, 105, 0.699);
+    font-family: GreekFont;
+    padding: 10px;
+
+}
+
+#text:hover {
+    background-color: rgba(236, 160, 105, 1);
+    cursor: pointer;
 }
