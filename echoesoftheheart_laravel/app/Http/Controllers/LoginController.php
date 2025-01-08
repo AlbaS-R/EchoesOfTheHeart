@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
@@ -39,14 +40,39 @@ class LoginController extends Controller
             'password' => 'required|confirmed|min:8',
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'fecha_de_registro' => Carbon::now(),
         ]);
 
-        return redirect('/login')->with('success', 'Registro exitoso. ¡Por favor inicia sesión!');
+        // Progreso::create([
+
+        // ]);
+
+        Auth::login($user);
+
+        return redirect('/inicio');
+    }
+
+    public function callback()
+    {
+        $googleUser = Socialite::driver('google')->user();
+        $user = User::updateOrCreate([
+            'google_id' => $googleUser->id,
+        ], [
+            'name' => $googleUser->name,
+            'email' => $googleUser->email,
+            'google_token' => $googleUser->token,
+            'fecha_de_registro' => Carbon::now(),
+        ]);
+
+
+
+        Auth::login($user);
+
+        return redirect('/inicio');
+        // $user->token
     }
 }
-

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -52,7 +53,7 @@
                             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(201, 82, 13); font-weight: bold; font-size: 16px; font-family:GreekFont;">Registrar</span>
                     </a>
                 </div>
-                <script src="src/login.js"></script>
+                {{-- <script src="src/login.js"></script> --}}
             </form>
 
         </div>

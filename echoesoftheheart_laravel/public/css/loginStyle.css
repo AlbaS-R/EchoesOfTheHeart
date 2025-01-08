@@ -4,7 +4,7 @@
   }
 
 body{
-    background-image: url('/css/imagenes/image1.png');
+    background-image: url('/css/imagenes/image1.webp');
     background-size: cover;
     background-position: 70%;
 
@@ -21,7 +21,7 @@ body{
      display: flex;
      width: 900px;
      height: 900px;
-     background-image: url('/css/imagenes/loginSombreado.png');
+     background-image: url('/css/imagenes/loginSombreado.webp');
      background-size: 100%;
 }
 .contenidor{

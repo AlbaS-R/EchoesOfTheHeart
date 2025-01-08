@@ -64,7 +64,45 @@
 
 }
 
+#playertext{
+    pointer-events: none;
+}
+
 #text:hover {
     background-color: rgba(236, 160, 105, 1);
     cursor: pointer;
+}
+
+#characters {
+    display: flex; /* Alinea los personajes horizontalmente */
+    justify-content: center; /* Centra los personajes en el contenedor */
+    gap: 20px; /* Espaciado entre los personajes */
+    position: absolute;
+    z-index: 0; /* Asegura que los personajes estén debajo de m_dialogo */
+
+
+}
+
+#char_2 {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: row; /* Alinea la imagen y el texto en una fila */
+    align-items: center; /* Centra verticalmente el texto con respecto a la imagen */
+    position: absolute;
+    gap: 10px;
+
+}
+
+
+.textbox{
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    display: inline-block;
+    max-width: 300px;
+    z-index: 2;
+    word-wrap: break-word;
 }

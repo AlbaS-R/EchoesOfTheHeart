@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Dialogo;
+use App\Models\User;
 
 
 class GameController extends Controller
@@ -20,13 +21,51 @@ class GameController extends Controller
     }
 
     public function siguiente(Request $request){
-        $currentText = $request->textOrder;
+        $user = User::find(Auth::user()->id);
 
-        $dialogo = Dialogo::where('orden', $currentText+1)->first();
+        if ($user->esencias <= 0){
+            return response("eres pobre", 402);
+        }
+        else{
+            $currentText = $request->textOrder;
 
-        $dialogo->text = str_replace("[Nombre del usuario]", Auth::user()->name, $dialogo->text);
+            $response = Dialogo::where('orden', $currentText+1)->first();
 
-        return response()->json($dialogo);
+            // text stuff
+            $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
+
+            // esencias
+            $user->esencias = $user->esencias-1;
+            $user->save();
+
+            $response->esencias = $user->esencias;
+
+            return response()->json($response);
+        }
+    }
+
+    public function decision(Request $request){
+        $user = User::find(Auth::user()->id);
+
+        if ($user->esencias <= 0){
+            return response("eres pobre", 402);
+        }
+        else{
+            $currentText = $request->textOrder;
+
+            $response = Dialogo::where('orden', $request->id)->first();
+
+            // text stuff
+            $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
+
+            // esencias
+            $user->esencias = $user->esencias-1;
+            $user->save();
+
+            $response->esencias = $user->esencias;
+
+            return response()->json($response);
+        }
     }
 
 }
