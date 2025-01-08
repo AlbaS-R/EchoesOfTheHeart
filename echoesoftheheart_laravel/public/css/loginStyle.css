@@ -1,9 +1,9 @@
 @font-face {
     font-family: GreekFont;
     src: url(/fonts/OLYMB.TTF);
-  }
+}
 
-body{
+body {
     background-image: url('/css/imagenes/image1.webp');
     background-size: cover;
     background-position: 70%;
@@ -14,32 +14,40 @@ body{
     font-family: GreekFont;
 
 }
-.container{
 
-     text-align: center;
-     justify-content: center;
-     display: flex;
-     width: 900px;
-     height: 900px;
-     background-image: url('/css/imagenes/loginSombreado.webp');
-     background-size: 100%;
+.container {
+    margin-top: -110px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 1300px;
+    /* Se ajusta al contenido */
+
+    /* Si quieres limitar el ancho */
+    height: 1300px;
+    /* Se ajusta automáticamente al contenido */
+    padding: 20px;
+    background-image: url('/css/imagenes/loginSombreado.webp');
+    background-size: 100%;
 }
-.contenidor{
+
+.contenidor {
 
     text-align: left;
     font-family: GreekFont;
     font-size: larger;
     color: rgb(255, 161, 20);
 }
-#contenido{
+
+#contenido {
 
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 150px;
 
 }
 
-#logo{
+#logo {
 
     margin-top: 60%;
 }
@@ -52,23 +60,20 @@ input {
     border-width: 0 0 2px;
     border-color: rgb(255, 161, 20);
     margin-bottom: 20px;
-    width: 100%; /* Inputs ocupan todo el ancho disponible */
+    width: 100%;
+    /* Inputs ocupan todo el ancho disponible */
 }
 
-#btnSend{
-
+#btnGoogle img {
+    width: 500px; /* Cambia el tamaño del botón */
+    height: auto; /* Mantiene las proporciones */
 }
 
-#btnRgt{
-
+#btnGoogle span {
+    font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
 }
 
-#btnRgtGoogle{
-
-}
-
-
-h2{
+h2 {
     font-size: larger;
     font-family: GreekFont;
     font-style: bold;

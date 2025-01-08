@@ -52,6 +52,14 @@
                         <span
                             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(201, 82, 13); font-weight: bold; font-size: 16px; font-family:GreekFont;">Registrar</span>
                     </a>
+                    <br>
+                    <a id="btnGoogle" href="{{ route('redirect') }}"
+                    style="border: none; background: none; position: relative; display: inline-block;">
+                    <img src="{{ asset('images/login/botón.png') }}" alt="Google"
+                        style="width: 350px; height: 100px; ">
+                    <span
+                        style=" position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%); color: rgb(201, 82, 13); font-weight: bold; font-size: 16px; font-family:GreekFont;">Registrar con Google</span>
+                    </a>
                 </div>
                 {{-- <script src="src/login.js"></script> --}}
             </form>

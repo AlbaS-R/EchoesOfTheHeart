@@ -75,7 +75,7 @@
             <br>
             <br>
             <img class="imgPrg2" src="{{ asset('images/principal/updates.png') }}" alt="Updates Main">
-
+            
             @foreach ($news as $new)
                 <p>{{$new->titulo}}</p>
             @endforeach

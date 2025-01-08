@@ -22,7 +22,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('processLogin');
 Route::get('/registrar', function () {return view('login.registro');})->name('registrar');
 Route::post('/registrar', [LoginController::class, 'register'])->name('processRegister');
 
-Route::get('/redirect', function () {return Socialite::driver('google')->redirect();});
+Route::get('/redirect', function () {return Socialite::driver('google')->redirect();})->name('redirect');
 Route::get('/callback', [LoginController::class, 'callback']);
 
 Route::post('/logout', function () {Auth::logout(); return redirect('/');})->name('logout');

@@ -350,10 +350,22 @@ body {
 
 }
 
+.updates p {
+    position: absolute;
+    margin-top: ; /* Ajusta la posición según sea necesario */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%);
+    z-index: 10; /* Asegúrate de que el texto esté encima */
+    color: black; /* Ajusta el color si es necesario */
+    font-size: 18px; /* Tamaño del texto */
+}
+
 .imgPrg2 {
     margin-top: 100px;
     display: flex;
     width: 100%;
+    position: relative;
+    z-index: 1;
 
 }
 
