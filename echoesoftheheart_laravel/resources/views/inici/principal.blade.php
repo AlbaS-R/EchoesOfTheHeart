@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
@@ -7,9 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/inicioStyle.css') }}">
     <title>Inicio</title>
 </head>
+
 <body>
     <img class="img1" src="{{ asset('images/principal/pilar.png') }}" alt="Imagen Principal">
-    <img class="img2"  src="{{ asset('images/principal/pilar.png') }}" alt="Imagen Principal">
+    <img class="img2" src="{{ asset('images/principal/pilar.png') }}" alt="Imagen Principal">
     <div class="usuario">
         <div class="logout-button">
             <form action="{{ route('logout') }}" method="POST">
@@ -68,30 +70,39 @@
             </div>
             <br>
             <br>
-            <img class="imgDiv" src="{{ asset('images/principal/divisor1.png') }}" alt="Divisor Principal">
         </div>
         <div class="updates">
             <img class="imgDiv2" src="{{ asset('images/principal/divisor2.png') }}" alt="Divisor Principal 2">
             <br>
             <br>
             <img class="imgPrg2" src="{{ asset('images/principal/updates.png') }}" alt="Updates Main">
-            
-            @foreach ($news as $new)
-                <p>{{$new->titulo}}</p>
-            @endforeach
+
+            <div class="slider-container">
+                <div class="slider">
+                    @foreach ($news as $new)
+                        <div class="slide">
+                            <h3>{{ $new->titulo }}</h3>
+                            <p>{{ $new->texto }}</p>
+                        </div>
+                    @endforeach
+                </div>
+                <!-- Navigation Buttons -->
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+            <br>
+
+
 
         </div>
+        <br>
         <div class="footer">
 
             <p>ejemplo</p>
 
         </div>
-
-
-    </div>
-
-
+        <script src="js/update.js"></script>
 
 </body>
-</html>
 
+</html>
