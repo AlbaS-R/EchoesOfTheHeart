@@ -7,17 +7,30 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Dialogo;
 use App\Models\User;
+use App\Models\Progreso;
 
 
 class GameController extends Controller
 {
     public function play(){
-        // check if it's the first time the player is here
-        $dialogo = Dialogo::first();
+        // get saved dialog (if exists)
+        $user = User::find(Auth::id());
+        $progreso = $user->progreso()->get();
 
-        // otherwise continue
+        // check if it really exists
+        if ($progreso->isEmpty()){
+            // attach a progress to the user (set to the first chapter and dialog)
+            $user->progreso()->create([
+                'dialogo_id' => '1',
+                'capitulo_id' => '1',
+            ]);
 
-        return view('juego.p_juego',['dialogo'=>$dialogo]);
+        }
+
+        // get the dialog id
+        $progreso = $user->progreso()->first()->dialogo_id-1;
+
+        return view('juego.p_juego',['progreso'=>$progreso,]);
     }
 
     public function siguiente(Request $request){
@@ -28,15 +41,23 @@ class GameController extends Controller
         }
         else{
             $currentText = $request->textOrder;
-
             $response = Dialogo::where('orden', $currentText+1)->first();
 
-            // text stuff
+            // text replacements (username)
             $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
 
-            // esencias
-            $user->esencias = $user->esencias-1;
-            $user->save();
+
+            $progreso = User::find(Auth::id())->progreso()->first();
+            // restar esencias solo si no es la primera carga de la pagina
+            if ($currentText != $progreso->dialogo_id-1){
+                $user->esencias = $user->esencias-1;
+                $user->save();
+            }
+            // actualizar el progreso
+            $progreso->dialogo_id = $currentText+1;
+            $progreso->save();
+
+
 
             $response->esencias = $user->esencias;
 

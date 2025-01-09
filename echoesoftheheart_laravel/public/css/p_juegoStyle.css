@@ -64,9 +64,6 @@
 
 }
 
-#playertext{
-    pointer-events: none;
-}
 
 #text:hover {
     background-color: rgba(236, 160, 105, 1);

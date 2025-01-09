@@ -48,7 +48,7 @@ return new class extends Migration
             $table->foreignId('personaje_id')->nullable();
 
             $table->text('html');
-            $table->text('info');
+            $table->text('php')->nullable();
 
             $table->foreign('capitulo_id')->references('id')->on('capitulos');
             $table->foreign('personaje_id')->references('id')->on('personajes');

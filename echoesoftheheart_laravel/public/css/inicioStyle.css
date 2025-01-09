@@ -359,6 +359,7 @@ body {
 /* ... (previous CSS remains unchanged) ... */
 
 .updates {
+    font-family: GreekFont;
     justify-content: center;
     display: flex;
     position: relative;
@@ -367,11 +368,13 @@ body {
     padding: 10px;
     text-align: center;
     flex-direction: column;
+    font-size: larger;
 }
 
 .updates p {
 
-    color: black;
+    text-align: center;
+    color: rgb(65, 41, 13);
     font-size: 18px;
     display: flex;
 }
@@ -385,7 +388,7 @@ body {
 }
 
 .slider-container {
-
+    padding: 10px;
     position: absolute;
     top: 255px; /* Ajusta la posición según la imagen */
     left: 50%;
@@ -427,7 +430,7 @@ body {
 }
 
 .next {
-    right: 10px; /* Ajusta este valor para que el botón esté visible */
+    right: 5px; /* Ajusta este valor para que el botón esté visible */
 }
 
 .todo {

@@ -4,10 +4,9 @@
     <div class="juego">
         <div class="dialogo">
 
-
             {{-- variables iniciales para el js --}}
             <script>
-                let textOrder = {{ $dialogo->orden-1 }}
+                let textOrder = {{ $progreso }}
                 let _token = "{{ csrf_token() }}"
             </script>
 

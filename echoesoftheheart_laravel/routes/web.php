@@ -37,7 +37,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/inicio', [MainController::class, 'getInicio'])->name('inicio');
     Route::get('/capitulos', [MainController::class, 'getCapitulos'])->name('capitulos');
     Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('imagenes');
-    Route::get('/personajes', function () {return view('personajes.p_personajes');})->name('personajes');
+    Route::get('/personajes', [MainController::class, 'getPersonajes'])->name('personajes');
+    Route::post('/update-name', [MainController::class, 'updateName'])->middleware('auth');
     Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('perfil');
     Route::get('/armario', function () {return view('perfil.p_armario');})->name('armario');
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/default.css') }}">
     <script src="/js/jquery-3.7.1.min.js"></script>
-    <title>Inicio</title>
+    <title>Echoes Of The Heart</title>
 </head>
 <body>
     <img class="img1" src="{{ asset('images/principal/pilar.png') }}" alt="Imagen Principal">

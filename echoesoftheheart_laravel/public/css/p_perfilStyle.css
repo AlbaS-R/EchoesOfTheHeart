@@ -1,10 +1,77 @@
-.container{
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+}
+
+.container {
+    position: relative; /* Necesario para posicionar los elementos dentro de este contenedor */
     display: flex;
+    justify-content: center; /* Centra horizontalmente la información */
+    align-items: center; /* Centra verticalmente la información */
     background-image: url(/css/imagenes/perfil/perfil.png);
     background-size: cover;
+    background-position: center; /* Asegura que la imagen esté centrada */
     width: 1000px;
     height: 900px;
     margin-top: 50px;
-    margin-left: -100px;
+    margin-left: -50px;
+    border-radius: 10px; /* (Opcional) Bordes redondeados para el contenedor */
 
+}
+
+.info {
+    position: absolute; /* Permite que la información se posicione sobre el contenedor */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado entre los elementos verticales */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centrar texto */
+    width: 300px; /* Ajustar el ancho de la información */
+    max-width: 600px; /* Ancho máximo */
+    color: rgb(109, 109, 109);
+    text-shadow: 10px, rgb(109, 109, 109);
+
+    font-family: GreekFont;
+
+}
+
+.nombre {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaciado debajo del nombre */
+}
+
+.cositas {
+    font-size: 30px;
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.edit-button img{
+    top: 20px;
+    display: flex;
+    position: absolute;
+    width: 50px;
+    cursor: pointer;
+    z-index: 1;
 }

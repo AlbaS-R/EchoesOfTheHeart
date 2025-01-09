@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -51,12 +52,21 @@ class User extends Authenticatable
         ];
     }
 
+    // database relations
     /**
      * Get the progress associated with the user.
      */
     public function progreso(): HasOne
     {
         return $this->hasOne(Progreso::class);
+    }
+
+    /**
+     * The characters that have relations with the user.
+     */
+    public function personajes(): BelongsToMany
+    {
+        return $this->belongsToMany(Personaje::class, 'relaciones')->withPivot('lovemeter');
     }
 
 }

@@ -5,7 +5,18 @@
     <link rel="stylesheet" href="{{ asset('css/p_personajesStyle.css') }}">
 
     <div class="container">
-        <img class="n_1" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj1">
+
+        {{print_r($relaciones)}}
+
+        @foreach ($personajes as $personaje)
+            <img class="n_{{$personaje->id}}" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj1">
+            <div class="pj_{{$personaje->id}}">
+                <p></p>
+                <p>primera descripción</p>
+            </div>
+        @endforeach
+
+        {{-- <img class="n_1" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj1">
         <div class="pj_1">
             <p>primera descripción</p>
         </div>
@@ -23,6 +34,7 @@
         <img class="n_4" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj4">
         <div class="pj_4">
             <p>última descripción</p>
-        </div>
+        </div> --}}
+
     </div>
 @endsection

@@ -33,11 +33,13 @@ function mostrar(data){
         }
         else{
             document.getElementById("playertext").innerHTML = data.html
+
         }
     }
     else {
         document.getElementById("char_"+data.personaje_id).removeAttribute("hidden")
         document.getElementById("char_"+data.personaje_id).querySelectorAll(".textbox")[0].innerHTML = data.html
+        document.getElementById("text").setAttribute("onclick","siguienteTexto()")
         document.getElementById("playertext").innerHTML = "siguiente . . ."
     }
 
