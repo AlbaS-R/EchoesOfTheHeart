@@ -76,3 +76,21 @@ img.cap2{
 .tit2{
     margin-top: 1100px;
 }
+
+.progress-bar-container {
+    width: 400px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #f8c37f;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}

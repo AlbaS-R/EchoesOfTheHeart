@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function(){
 
     //Rutas de paginas
     Route::get('/inicio', [MainController::class, 'getInicio'])->name('inicio');
+    Route::get('/progreso/{capitulo_id}', [GameController::class, 'progresoCapitulo']);
     Route::get('/capitulos', [MainController::class, 'getCapitulos'])->name('capitulos');
     Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('imagenes');
     Route::get('/personajes', [MainController::class, 'getPersonajes'])->name('personajes');

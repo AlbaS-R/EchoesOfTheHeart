@@ -89,4 +89,31 @@ class GameController extends Controller
         }
     }
 
+    public function obtenerProgreso($capitulo_id) {
+        $user = User::find(Auth::user()->id);
+
+        // Obtener el total de diálogos del capítulo
+        $totalDialogos = Dialogo::where('capitulo_id', $capitulo_id)->count();
+
+        // Obtener el progreso del usuario en el capítulo
+        $progreso = $user->progreso()->where('capitulo_id', $capitulo_id)->first();
+
+        if (!$progreso || $totalDialogos == 0) {
+            return 0; // Sin progreso o diálogos
+        }
+
+        // Calcular el porcentaje del progreso
+        $porcentaje = ($progreso->dialogo_id / $totalDialogos) * 100;
+
+        return round($porcentaje, 2); // Redondear a dos decimales
+    }
+    
+    public function progresoCapitulo($capitulo_id)
+    {
+        $progreso = $this->obtenerProgreso($capitulo_id);
+
+        return response()->json(['progreso' => $progreso]);
+    }
+
+
 }

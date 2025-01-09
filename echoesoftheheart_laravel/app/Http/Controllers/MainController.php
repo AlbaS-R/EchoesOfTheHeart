@@ -49,4 +49,7 @@ class MainController extends Controller
 
         return response()->json(['name' => $user->name], 200);
     }
+
+    
+
 }

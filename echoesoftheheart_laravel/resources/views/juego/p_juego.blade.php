@@ -23,10 +23,12 @@
                     <img id="char_2_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/amongus.png" style="height: 400px;">
                     <div class="textbox" id="amaranta_text"></div>
                 </div>
+
                 <div id="char_3" hidden>
                     <img id="char_3_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/ajax.png" style="height: 400px;">
                     <div class="textbox" id="ajax_text"></div>
                 </div>
+
                 <div id="char_4" hidden>
                     <img id="char_4_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/helium.png" style="height: 400px;">
                     <div class="textbox" id="elio_text"></div>
