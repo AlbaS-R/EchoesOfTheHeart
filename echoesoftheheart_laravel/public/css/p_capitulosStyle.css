@@ -30,19 +30,21 @@ img.cap2{
     top: 1017px;
 }
 /* Estilo de los divs */
-.cap_0, .cap_1, .cap_2 {
+.cap_0 {
     background-image: url('/css/imagenes/cap/imgPrg2.png');
     background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
     background-repeat: no-repeat;
     width: 743px;
     height: 349px;
-    display: flex;
     justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
     color: rgb(0, 0, 0);
     position: relative;
     z-index: 1; /* Asegura que el div esté debajo de la imagen */
     margin-right: -255px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+
 }
 
 .cap_0 .btnTuto,
@@ -69,23 +71,28 @@ img.cap2{
     pointer-events: none; /* Hace que el texto no sea interactivo */
 }
 
-.tit1{
-    margin-top: 550px;
-}
+.descrp{
+    margin-top: 70px;
+    display: flex;
+    text-align: center;
+    font-family: GreekFont;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    font-size: x-large;
 
-.tit2{
-    margin-top: 1100px;
 }
 
 .progress-bar-container {
+    display: flex;
     width: 400px;
-    background-color: #e0e0e0;
+    background-color: #e0e0e083; 
     border-radius: 5px;
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .progress-bar {
+    display: flex;
     height: 20px;
     background-color: #f8c37f;
     text-align: center;

@@ -7,6 +7,7 @@
                 <div class="overlay-text">{{ $capitulo->nombre }}</div>
                 <img class="tuto" src="{{ asset('images/capitulos/imgJrrn2.png') }}" alt="Tuto">
                 <div class="cap_0">
+                    <div class="descrp">{{ $capitulo->descripcion }}</div>
                     <div class="progress-bar-container">
                         <div id="progress-bar-{{ $capitulo->id }}" class="progress-bar"></div>
                     </div>
