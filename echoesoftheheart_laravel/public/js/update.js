@@ -26,3 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
         updateSliderPosition();
     }, 5000);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.querySelector(".progress-text");
+
+    // Ejemplo de actualización dinámica
+    let progressValue = 50; // Valor inicial
+    setInterval(() => {
+        if (progressValue < 100) {
+            progressValue += 1;
+            progressBar.value = progressValue;
+            progressText.textContent = `${progressValue}%`;
+        }
+    }, 100); // Incrementa el progreso cada 100ms
+});

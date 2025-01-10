@@ -36,6 +36,11 @@
     <div class="todo">
         <div class="contenido">
             <img class="imgJrrn" src="{{ asset('images/principal/jarrón.png') }}" alt="Jarrón Principal">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div> <!-- Ajusta el ancho según el progreso -->
+                </div>
+            </div>
             <img class="imgPrg" src="{{ asset('images/principal/pergaminoMain.png') }}" alt="Pergamino Main">
             <div class="menuPrn">
                 <a class="btnH" href="{{ route('juego') }}">
@@ -102,6 +107,7 @@
 
         </div>
         <script src="js/update.js"></script>
+
 
 </body>
 

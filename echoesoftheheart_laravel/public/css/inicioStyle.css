@@ -451,3 +451,36 @@ body {
     text-align: center;
     padding: 10px;
 }
+.progress-container {
+    position: absolute;
+    top: 250px; /* Posiciona la barra de progreso por encima del jarrón */
+    left: 90px; /* Centra horizontalmente la barra */
+    transform: translateX(-50%);
+    width: 150px; /* Ajusta el ancho de la barra al del jarrón */
+    height: 20px; /* Altura de la barra */
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo gris claro */
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10; /* Superior al z-index del jarrón (2 en este caso) */
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo de la barra */
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: rgb(235, 152, 0); /* Color del progreso */
+    transition: width 0.5s ease; /* Animación para el progreso */
+}
+
+.overlay-text {
+    position: relative;
+    font-size: 30px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para mayor visibilidad */
+    color: white; /* Color del texto */
+    font-family: GreekFont;
+}
