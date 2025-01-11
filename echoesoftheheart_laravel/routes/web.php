@@ -35,13 +35,14 @@ Route::group(['middleware' => ['auth']], function(){
 
     //Rutas de paginas
     Route::get('/inicio', [MainController::class, 'getInicio'])->name('inicio');
-    Route::get('/progreso/{capitulo_id}', [GameController::class, 'progresoCapitulo']);
     Route::get('/capitulos', [MainController::class, 'getCapitulos'])->name('capitulos');
     Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('imagenes');
     Route::get('/personajes', [MainController::class, 'getPersonajes'])->name('personajes');
     Route::post('/update-name', [MainController::class, 'updateName'])->middleware('auth');
     Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('perfil');
     Route::get('/armario', function () {return view('perfil.p_armario');})->name('armario');
+
+    Route::get('/progreso/{capitulo_id}', [MainController::class, 'progresoCapitulo']);
 
     // the game
     Route::get('/juego', [GameController::class, 'play'])->name('juego');

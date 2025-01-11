@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Dialogo;
 use App\Models\User;
-use App\Models\Progreso;
 
 
 class GameController extends Controller
@@ -87,32 +86,6 @@ class GameController extends Controller
 
             return response()->json($response);
         }
-    }
-
-    public function obtenerProgreso($capitulo_id) {
-        $user = User::find(Auth::user()->id);
-
-
-        $totalDialogos = Dialogo::where('capitulo_id', $capitulo_id)->count();
-
-
-        $progreso = $user->progreso()->where('capitulo_id', $capitulo_id)->first();
-
-        if (!$progreso || $totalDialogos == 0) {
-            return 0;
-        }
-
-
-        $porcentaje = ($progreso->dialogo_id / $totalDialogos) * 100;
-
-        return round($porcentaje, 2); 
-    }
-
-    public function progresoCapitulo($capitulo_id)
-    {
-        $progreso = $this->obtenerProgreso($capitulo_id);
-
-        return response()->json(['progreso' => $progreso]);
     }
 
 
