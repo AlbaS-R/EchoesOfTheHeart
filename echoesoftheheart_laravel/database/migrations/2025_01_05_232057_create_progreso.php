@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('dialogo_id');
             $table->foreignId('capitulo_id');
+            $table->integer('reinicios')->default(0);
             $table->timestamps();
 
 

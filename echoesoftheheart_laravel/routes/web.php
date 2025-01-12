@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/armario', function () {return view('perfil.p_armario');})->name('armario');
 
     Route::get('/progreso/{capitulo_id}', [MainController::class, 'progresoCapitulo']);
-
+    Route::get('/reiniciar-historia/{capitulo_id}', [MainController::class, 'reiniciarProgreso'])->name('reiniciar.historia');
     // the game
     Route::get('/juego', [GameController::class, 'play'])->name('juego');
     Route::post('/juego/siguiente', [GameController::class, 'siguiente']);

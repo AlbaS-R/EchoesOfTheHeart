@@ -11,9 +11,13 @@
                     <div class="progress-bar-container">
                         <div class="progress-bar" style="width: {{$progreso}}%;"></div>
                     </div>
-                    <a href="">
-                        <img class="btnTuto" src="{{ asset('images/capitulos/btnCap.png') }}" alt="">
-                    </a>
+                    @if ($capitulo->reinicios >= 5)
+                        <button class="btnTuto" disabled>Limite de reinicios alcanzado</button>
+                    @else
+                        <a href="{{ route('reiniciar.historia', ['capitulo_id' => $capitulo->id]) }}">
+                            <img class="btnTuto" src="{{ asset('images/capitulos/btnCap.png') }}" alt="">
+                        </a>
+                    @endif
                 </div>
             </div>
             <br>

@@ -18,12 +18,18 @@ class GameController extends Controller
 
         // check if it really exists
         if ($progreso->isEmpty()){
-            // attach a progress to the user (set to the first chapter and dialog)
-            $user->progreso()->create([
-                'dialogo_id' => '1',
-                'capitulo_id' => '1',
-            ]);
 
+            $dialogo = Dialogo::find(1);
+            if (!$dialogo) {
+
+                return response()->json(['error' => 'El diálogo inicial no existe en la base de datos.'], 400);
+            }
+
+        
+            $user->progreso()->create([
+                'dialogo_id' => 1,
+                'capitulo_id' => 1,
+            ]);
         }
 
         // get the dialog id

@@ -48,6 +48,10 @@ class TutorialSeeder extends Seeder
             'tipo' => "normal",
         ]);
 
+        // =========== dialogo ===========
+        $path = 'database/seeders/TutorialDialogos.sql';
+        DB::unprepared(file_get_contents($path));
+        $this->command->info('  Inserted SQL file');
 
 
     }
