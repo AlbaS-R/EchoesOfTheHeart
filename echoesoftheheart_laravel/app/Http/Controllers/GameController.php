@@ -25,7 +25,7 @@ class GameController extends Controller
                 return response()->json(['error' => 'El diálogo inicial no existe en la base de datos.'], 400);
             }
 
-        
+
             $user->progreso()->create([
                 'dialogo_id' => 1,
                 'capitulo_id' => 1,
@@ -51,6 +51,9 @@ class GameController extends Controller
             // text replacements (username)
             $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
 
+            // execute php
+            eval($response->php);
+            unset($response->php);
 
             $progreso = User::find(Auth::id())->progreso()->first();
             // restar esencias solo si no es la primera carga de la pagina
@@ -93,6 +96,8 @@ class GameController extends Controller
             return response()->json($response);
         }
     }
+
+
 
 
 }

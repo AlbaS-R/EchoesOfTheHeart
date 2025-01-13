@@ -26,13 +26,18 @@ return new class extends Migration
             $table->timestamp('fecha_de_registro');
 
             $table->foreignId('id_ropa')->nullable();
-            $table->foreignId('id_fotos')->nullable();
 
 
             $table->foreign('id_ropa')->references('id_Ropa')->on('ropa');
-            $table->foreign('id_fotos')->references('id_Fotos')->on('fotos');
-
         });
+        Schema::create('fotos_users', function (Blueprint $table) {
+            $table->foreignId('user_id');
+            $table->foreignId('foto_id');
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('foto_id')->references('foto_id')->on('fotos');
+        });
+
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

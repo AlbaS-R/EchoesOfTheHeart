@@ -467,7 +467,7 @@ body {
 .progress-bar {
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Fondo de la barra */
+    background-color: rgba(235, 152, 0); /* Fondo de la barra */
     position: relative;
 }
 
@@ -483,4 +483,13 @@ body {
     font-weight: bold; /* Negrita para mayor visibilidad */
     color: white; /* Color del texto */
     font-family: GreekFont;
+}
+
+.mainChar{
+    margin-top: 51px;
+    position: absolute;
+    z-index: 10;
+    width: 450px;
+    height: auto;
+    right: -50px;
 }

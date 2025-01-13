@@ -80,7 +80,8 @@
         </div>
         <div class="footer">
 
-            <p>ejemplo</p>
+            <p>Echoes Of The Heart {{date("Y");}}, source available at <a href="https://github.com/AlbaS-R/EchoesOfTheHeart">Github</a>,
+                Hosting and development environment provided by <a href="https://subpolygon.com">Subpolygon Servers</a></p>
         </div>
 
     </div>

@@ -40,11 +40,11 @@
             <div class="progress-container">
                 <div class="progress-bar" style="width: {{$progreso}}%;"></div>
             </div>
-
+            <img class="mainChar" src="{{ asset('media_juego/personajes/mainCharacter.png') }}" alt="">
             <img class="imgPrg" src="{{ asset('images/principal/pergaminoMain.png') }}" alt="Pergamino Main">
             <div class="menuPrn">
                 <a class="btnH" href="{{ route('juego') }}">
-                    <img src="{{ asset('images/principal/Btn/btnM1.png') }}" alt="Historia">
+                    <img  src="{{ asset('images/principal/Btn/btnM1.png') }}" alt="Historia">
                 </a>
                 <a id="btnC" href="{{ route('capitulos') }}">
                     <img src="{{ asset('images/principal/Btn/btnM2.png') }}" alt="Capitulos">
@@ -103,7 +103,8 @@
         <br>
         <div class="footer">
 
-            <p>ejemplo</p>
+            <p>Echoes Of The Heart {{date("Y");}}, source available at <a href="https://github.com/AlbaS-R/EchoesOfTheHeart">Github</a>,
+                Hosting and development environment provided by <a href="https://subpolygon.com">Subpolygon Servers</a></p>
 
         </div>
         <script src="js/update.js"></script>
