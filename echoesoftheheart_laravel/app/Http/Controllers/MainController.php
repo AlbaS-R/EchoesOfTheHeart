@@ -149,11 +149,14 @@ class MainController extends Controller
     return redirect()->route('capitulos')->with('success', 'Capítulo reiniciado exitosamente.');
     }
 
-    public function paginaImagen($id_fotos){
-        $user = User::find(Auth::user()->id);
-        $imagenes = $user->imagenes()->where('id_fotos', $id_fotos);
+    public function paginaImagen(){
+        $user = User::find(Auth::id());
+        $imagenes = $user->imagenes()->get();
 
 
+        return view('imagenes.p_imagenes', ['imagenes' => $imagenes]);
 
     }
+
+
 }

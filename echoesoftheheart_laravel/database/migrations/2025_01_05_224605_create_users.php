@@ -30,12 +30,12 @@ return new class extends Migration
 
             $table->foreign('id_ropa')->references('id_Ropa')->on('ropa');
         });
-        Schema::create('fotos_users', function (Blueprint $table) {
+        Schema::create('foto_user', function (Blueprint $table) {
             $table->foreignId('user_id');
             $table->foreignId('foto_id');
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('foto_id')->references('foto_id')->on('fotos');
+            $table->foreign('foto_id')->references('id')->on('fotos');
         });
 
 

@@ -25,7 +25,7 @@ return new class extends Migration
         });
 
         Schema::create('fotos', function (Blueprint $table) {
-            $table->id('foto_id')->primary();
+            $table->id()->primary();
             $table->string('url');
 
         });

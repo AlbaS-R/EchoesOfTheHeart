@@ -69,4 +69,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Personaje::class, 'relaciones')->withPivot('lovemeter');
     }
 
+    public function imagenes(): BelongsToMany
+    {
+        return $this->belongsToMany(Foto::class);
+    }
+
 }

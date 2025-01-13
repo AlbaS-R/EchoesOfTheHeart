@@ -70,6 +70,7 @@
     cursor: pointer;
 }
 
+
 #characters {
     display: flex;
     justify-content: center;
@@ -80,19 +81,15 @@
 }
 
 #char_2, #char_3, #char_4 {
-    width: 100%;
-    height: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 20px; /* Espacio entre el personaje y el texto */
     position: relative;
+    width: auto; /* Ajusta automáticamente el tamaño del contenido */
 }
 
-#char_2_img {
+#char_2_img, #char_3_img, #char_4_img {
     height: 400px;
-    position: absolute;
-    left: 430px;
-    transform: translateX(-50%);
     z-index: 1;
 }
 
@@ -109,12 +106,7 @@
     box-sizing: border-box;
     z-index: 2;
     word-wrap: break-word;
-    position: absolute;
-    left: 600px;
-    top: 100px;
-    transform: translateY(-50%);
 }
-
 .mainCharac{
     position: absolute;
     width: 200px;

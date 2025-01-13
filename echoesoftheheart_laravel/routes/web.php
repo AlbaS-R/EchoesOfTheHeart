@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth']], function(){
     //Rutas de paginas
     Route::get('/inicio', [MainController::class, 'getInicio'])->name('inicio');
     Route::get('/capitulos', [MainController::class, 'getCapitulos'])->name('capitulos');
-    Route::get('/imagenes', function () {return view('imagenes.p_imagenes');})->name('imagenes');
+    Route::get('/imagenes', [MainController::class, 'paginaImagen'])->name('imagenes');
     Route::get('/personajes', [MainController::class, 'getPersonajes'])->name('personajes');
     Route::post('/update-name', [MainController::class, 'updateName'])->middleware('auth');
     Route::get('/perfil', function () {return view('perfil.p_perfil');})->name('perfil');
@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::get('/progreso/{capitulo_id}', [MainController::class, 'progresoCapitulo']);
     Route::get('/reiniciar-historia/{capitulo_id}', [MainController::class, 'reiniciarProgreso'])->name('reiniciar.historia');
+
     // the game
     Route::get('/juego', [GameController::class, 'play'])->name('juego');
     Route::post('/juego/siguiente', [GameController::class, 'siguiente']);
