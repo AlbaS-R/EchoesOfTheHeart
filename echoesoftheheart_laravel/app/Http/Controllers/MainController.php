@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 use App\Models\UpdateNews;
@@ -149,14 +151,33 @@ class MainController extends Controller
     return redirect()->route('capitulos')->with('success', 'Capítulo reiniciado exitosamente.');
     }
 
-    public function paginaImagen(){
-        $user = User::find(Auth::id());
-        $imagenes = $user->imagenes()->get();
+    public function paginaImagen(Request $request)
+{
+    $user = User::find(Auth::id());
+    $imagenes = $user->imagenes()->get();
+
+    if ($request->has('foto_id')) {
+        $foto_id = $request->input('foto_id');
 
 
-        return view('imagenes.p_imagenes', ['imagenes' => $imagenes]);
+        $existe = DB::table('foto_user')
+                    ->where('user_id', $user->id)
+                    ->where('foto_id', $foto_id)
+                    ->exists();
 
+        if ($existe) {
+
+            return back()->withErrors(['error' => 'Esta imagen ya está asociada con tu cuenta.']);
+        } else {
+            DB::table('foto_user')->insert([
+                'user_id' => $user->id,
+                'foto_id' => $foto_id
+            ]);
+        }
     }
+
+    return view('imagenes.p_imagenes', ['imagenes' => $imagenes]);
+}
 
 
 }
