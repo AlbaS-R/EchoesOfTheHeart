@@ -22,7 +22,6 @@ class GameController extends Controller
 
             $dialogo = Dialogo::find(1);
             if (!$dialogo) {
-
                 return response()->json(['error' => 'El diálogo inicial no existe en la base de datos.'], 400);
             }
 
@@ -34,7 +33,7 @@ class GameController extends Controller
         }
 
         // get the dialog id
-        $progreso = $user->progreso()->first()->dialogo_id - 1;
+        $progreso = $user->progreso()->first()->dialogo_id -1;
 
         return view('juego.p_juego', ['progreso' => $progreso,]);
     }
@@ -43,51 +42,67 @@ class GameController extends Controller
     {
         $user = User::find(Auth::user()->id);
 
+        // check esencias
         if ($user->esencias <= 0) {
             return response("eres pobre", 402);
         }
 
         $currentText = $request->textOrder;
 
-        $opciones = Dialogo::where('orden_origen', $currentText)
-            ->where('es_opcion', 1)
-            ->get();
-
-        if ($opciones->isNotEmpty()) {
-            foreach ($opciones as $opcion) {
-                $opcion->html = str_replace("[Nombre del usuario]", Auth::user()->name, $opcion->html);
-            }
-
-            return response()->json([
-                'opciones' => $opciones,
-                'esencias' => $user->esencias,
-            ]);
+        if($currentText == 0){
+            $next_dialog = Dialogo::where('orden_origen', $currentText+1)->first();
         }
+        else{
+            $current_dialog = Dialogo::where('orden_origen', $currentText)->first();
 
-        $response = Dialogo::where('orden_origen', $currentText)
-            ->where('orden_destino', $currentText + 1)
-            ->first();
-
-        if (!$response) {
-            return response()->json(['error' => 'No se encontró el siguiente diálogo en la base de datos.'], 404);
+            $next_dialog = Dialogo::where('orden_origen', $current_dialog->orden_destino)->first();
         }
 
 
-        //$response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
+        if($next_dialog->es_opcion){
 
-        $progreso = User::find(Auth::id())->progreso()->first();
+            $choice1 = array(
+                'html' => $next_dialog->html,
+                'destination' => $next_dialog->orden_destino,
+            );
+
+            // vamos a asumir que solo hay dos deciciones :)
+            $next_next_dialog = Dialogo::where('orden_origen', $current_dialog->orden_destino)->skip(1)->first();
+            $choice2 = array(
+                'html' => $next_next_dialog->html,
+                'destination' => $next_next_dialog->orden_destino,
+            );
+
+            $next_dialog->choices = [$choice1,$choice2];
+
+            unset($next_dialog->html);
+        }
+        else{
+            // reemplazar con nombre de usuario
+            $next_dialog->html = str_replace("[Nombre del usuario]", Auth::user()->name, $next_dialog->html);
+        }
+
+        // ejecutar PHP
+        eval($next_dialog->php);
+        unset($next_dialog->php);
+
+
         // restar esencias solo si no es la primera carga de la pagina
+        $progreso = User::find(Auth::id())->progreso()->first();
+
         if ($currentText != $progreso->dialogo_id - 1) {
             $user->esencias = $user->esencias - 1;
             $user->save();
         }
-        // actualizar el progreso
-        $progreso->dialogo_id = $currentText + 1;
-        $progreso->save();
 
+        if(!$next_dialog->es_opcion){
+            // actualizar el progreso
+            $progreso->dialogo_id = $currentText + 1;
+            $progreso->save();
+        }
 
-        $response->esencias = $user->esencias;
-        return response()->json($response);
+        $next_dialog->esencias = $user->esencias;
+        return response()->json($next_dialog);
     }
 
 
@@ -97,14 +112,10 @@ class GameController extends Controller
         if ($user->esencias <= 0) {
             return response("eres pobre", 402);
         }
-        $currentText = $request->textOrder;
-        $response = Dialogo::where('orden_origen', $currentText)
-            ->where('orden_destino', $request->id)
-            ->first();
 
-        if (!$response) {
-            return response()->json(['error' => 'No se encontró el diálogo correspondiente a esta decisión.'], 404);
-        }
+
+        $response = Dialogo::where('orden_origen', $request->id)->first();
+
 
         $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
 

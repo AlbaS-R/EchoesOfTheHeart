@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/p_perfilStyle.css') }}">
     <div class="container">
         <div class="info">
-            <div class="nombre">
+            <div class="nombre" id="nombreDisplay">
                 {{ Auth::user()->name }}
             </div>
             <a class="edit-button" onclick="openEditForm()">
