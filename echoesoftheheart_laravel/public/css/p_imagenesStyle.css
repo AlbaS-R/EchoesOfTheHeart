@@ -90,3 +90,20 @@ img.jrrnTuto, img.jrrnCap1{
     top: 0;
     right: 20px;
 }
+
+.opcion {
+    background-color: rgba(236, 160, 105, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    font-family: GreekFont;
+    cursor: pointer;
+    text-align: center;
+}
+
+.opcion:hover {
+    background-color: rgba(236, 160, 105, 1);
+    color: black;
+}

@@ -11,13 +11,14 @@ use App\Models\User;
 
 class GameController extends Controller
 {
-    public function play(){
+    public function play()
+    {
         // get saved dialog (if exists)
         $user = User::find(Auth::id());
         $progreso = $user->progreso()->get();
 
         // check if it really exists
-        if ($progreso->isEmpty()){
+        if ($progreso->isEmpty()) {
 
             $dialogo = Dialogo::find(1);
             if (!$dialogo) {
@@ -33,71 +34,91 @@ class GameController extends Controller
         }
 
         // get the dialog id
-        $progreso = $user->progreso()->first()->dialogo_id-1;
+        $progreso = $user->progreso()->first()->dialogo_id - 1;
 
-        return view('juego.p_juego',['progreso'=>$progreso,]);
+        return view('juego.p_juego', ['progreso' => $progreso,]);
     }
 
-    public function siguiente(Request $request){
+    public function siguiente(Request $request)
+    {
         $user = User::find(Auth::user()->id);
 
-        if ($user->esencias <= 0){
+        if ($user->esencias <= 0) {
             return response("eres pobre", 402);
         }
-        else{
-            $currentText = $request->textOrder;
-            $response = Dialogo::where('orden', $currentText+1)->first();
 
-            // text replacements (username)
-            $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
+        $currentText = $request->textOrder;
 
-            // execute php
-            eval($response->php);
-            unset($response->php);
+        $opciones = Dialogo::where('orden_origen', $currentText)
+            ->where('es_opcion', 1)
+            ->get();
 
-            $progreso = User::find(Auth::id())->progreso()->first();
-            // restar esencias solo si no es la primera carga de la pagina
-            if ($currentText != $progreso->dialogo_id-1){
-                $user->esencias = $user->esencias-1;
-                $user->save();
+        if ($opciones->isNotEmpty()) {
+            foreach ($opciones as $opcion) {
+                $opcion->html = str_replace("[Nombre del usuario]", Auth::user()->name, $opcion->html);
             }
-            // actualizar el progreso
-            $progreso->dialogo_id = $currentText+1;
-            $progreso->save();
 
-
-
-            $response->esencias = $user->esencias;
-
-            return response()->json($response);
+            return response()->json([
+                'opciones' => $opciones,
+                'esencias' => $user->esencias,
+            ]);
         }
+
+        $response = Dialogo::where('orden_origen', $currentText)
+            ->where('orden_destino', $currentText + 1)
+            ->first();
+
+        if (!$response) {
+            return response()->json(['error' => 'No se encontró el siguiente diálogo en la base de datos.'], 404);
+        }
+
+
+        //$response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
+
+        $progreso = User::find(Auth::id())->progreso()->first();
+        // restar esencias solo si no es la primera carga de la pagina
+        if ($currentText != $progreso->dialogo_id - 1) {
+            $user->esencias = $user->esencias - 1;
+            $user->save();
+        }
+        // actualizar el progreso
+        $progreso->dialogo_id = $currentText + 1;
+        $progreso->save();
+
+
+        $response->esencias = $user->esencias;
+        return response()->json($response);
     }
 
-    public function decision(Request $request){
-        $user = User::find(Auth::user()->id);
 
-        if ($user->esencias <= 0){
+    public function decision(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        if ($user->esencias <= 0) {
             return response("eres pobre", 402);
         }
-        else{
-            $currentText = $request->textOrder;
+        $currentText = $request->textOrder;
+        $response = Dialogo::where('orden_origen', $currentText)
+            ->where('orden_destino', $request->id)
+            ->first();
 
-            $response = Dialogo::where('orden', $request->id)->first();
-
-            // text stuff
-            $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
-
-            // esencias
-            $user->esencias = $user->esencias-1;
-            $user->save();
-
-            $response->esencias = $user->esencias;
-
-            return response()->json($response);
+        if (!$response) {
+            return response()->json(['error' => 'No se encontró el diálogo correspondiente a esta decisión.'], 404);
         }
+
+        $response->html = str_replace("[Nombre del usuario]", Auth::user()->name, $response->html);
+
+
+        $user->esencias -= 1;
+        $user->save();
+
+
+        $progreso = $user->progreso()->first();
+        $progreso->dialogo_id = $request->id;
+        $progreso->save();
+
+
+        $response->esencias = $user->esencias;
+        return response()->json($response);
     }
-
-
-
-
 }

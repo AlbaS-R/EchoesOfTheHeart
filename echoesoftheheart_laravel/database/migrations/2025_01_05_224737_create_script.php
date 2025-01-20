@@ -40,8 +40,7 @@ return new class extends Migration
         Schema::create('dialogos', function (Blueprint $table) {
             $table->id('id')->primary();
             $table->foreignId('capitulo_id');
-            $table->integer('orden');
-            $table->enum('tipo', ['texto', 'elecion']);
+            $table->enum('tipo', ['texto', 'eleccion']);
 
             $table->string('url_fondo');
             $table->string('url_musica');
@@ -50,6 +49,10 @@ return new class extends Migration
 
             $table->text('html');
             $table->text('php')->nullable();
+
+            $table->integer('orden_origen');
+            $table->integer('orden_destino')->nullable();
+            $table->boolean('es_opcion')->nullable();
 
             $table->foreign('capitulo_id')->references('id')->on('capitulos');
             $table->foreign('personaje_id')->references('id')->on('personajes');
