@@ -56,15 +56,18 @@ function mostrar(data){
     $(".juego").css("background-image", "url("+data.url_fondo+")");
 
     // hide characters
-    if(data.esconder != ""){
-        if(data.esconder == "todos"){
+    if (data.esconder != "") {
+        if (data.esconder == "todos") {
+            // Esconder todos los personajes
             $("#char_2").css("display", "none");
             $("#char_3").css("display", "none");
             $("#char_4").css("display", "none");
-
-        }
-        else{
-            $("#char_"+data.esconder).css("display", "none")
+        } else {
+            // Esconder los personajes que están en data.esconder
+            let personajes = data.esconder.split(","); // Dividir por coma
+            personajes.forEach(function(personaje) {
+                $("#char_" + personaje).css("display", "none");
+            });
         }
     }
 

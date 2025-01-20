@@ -85,7 +85,7 @@ img.cap2{
 .progress-bar-container {
     display: flex;
     width: 400px;
-    background-color: #e0e0e083; 
+    background-color: #e0e0e083;
     border-radius: 5px;
     overflow: hidden;
     margin-top: 30px;
@@ -100,4 +100,15 @@ img.cap2{
     color: white;
     border-radius: 5px;
     transition: width 0.5s ease-in-out;
+}
+
+.reinicios{
+    font-size: 20px;
+    width: 120px;
+    height: auto;
+    position: absolute;
+    bottom: 180px; /* Ajusta la distancia desde la parte inferior */
+    right: 10px;
+    font-family: GreekFont;
+
 }

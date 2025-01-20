@@ -61,8 +61,10 @@ class MainController extends Controller
             if (!$progreso) {
                 $capitulo_id = null;
                 $progreso = 0;
+                $capitulo->reinicios = 0;
             } else {
                 $capitulo_id = $progreso->capitulo_id;
+                $capitulo->reinicios = $progreso->reinicios ?? 0;
             }
 
             if ($capitulo_id !== null) {
