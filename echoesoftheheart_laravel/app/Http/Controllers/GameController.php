@@ -55,7 +55,12 @@ class GameController extends Controller
         else{
             $current_dialog = Dialogo::where('orden_origen', $currentText)->first();
 
-            $next_dialog = Dialogo::where('orden_origen', $current_dialog->orden_destino)->first();
+            if(is_null($current_dialog->orden_destino)){
+                return response(url("/capitulos"), 302);
+            }
+            else{
+                $next_dialog = Dialogo::where('orden_origen', $current_dialog->orden_destino)->first();
+            }
         }
 
 
@@ -88,7 +93,7 @@ class GameController extends Controller
 
 
         // restar esencias solo si no es la primera carga de la pagina
-        $progreso = User::find(Auth::id())->progreso()->first();
+        $progreso = $user->progreso()->first();
 
         if ($currentText != $progreso->dialogo_id - 1) {
             $user->esencias = $user->esencias - 1;
@@ -113,7 +118,6 @@ class GameController extends Controller
             return response("eres pobre", 402);
         }
 
-
         $response = Dialogo::where('orden_origen', $request->id)->first();
 
 
@@ -122,6 +126,10 @@ class GameController extends Controller
 
         $user->esencias -= 1;
         $user->save();
+
+        // ejecutar PHP
+        eval($response->php);
+        unset($response->php);
 
 
         $progreso = $user->progreso()->first();

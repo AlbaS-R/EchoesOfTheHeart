@@ -6,35 +6,33 @@
 
     <div class="container">
 
-        {{print_r($relaciones)}}
-
-        @foreach ($personajes as $personaje)
-            <img class="n_{{$personaje->id}}" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj1">
-            <div class="pj_{{$personaje->id}}">
-                <p></p>
-                <p>primera descripción</p>
+        <div id="char_2" style="display: none;">
+            <div class="overlay-text1">Amaranta</div>
+            <img class="n_1" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj1">
+            <div class="pj_1">
+                <p>Amaranta una ninfa </p>
+                <img class="perfil1" src="{{ asset('images/pjs/perfil_Amaranta.png') }}" alt="perfilAma">
             </div>
-        @endforeach
 
-        {{-- <img class="n_1" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj1">
-        <div class="pj_1">
-            <p>primera descripción</p>
         </div>
 
-        <img class="n_2" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj2">
-        <div class="pj_2">
-            <p>descripción</p>
+        <div id="char_3" style="display: none;">
+            <div class="overlay-text2">Ajax</div>
+            <img class="n_2" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj2">
+            <div class="pj_2">
+                <p>descripción</p>
+                <img class="perfil2"src="{{ asset('images/pjs/perfil_ajax.png') }}" alt="">
+            </div>
         </div>
 
-        <img class="n_3" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj3">
-        <div class="pj_3">
-            <p>otra descripción</p>
+        <div id="char_4" style="display: none;">
+            <div class="overlay-text3">Helio</div>
+            <img class="n_3" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj3">
+            <div class="pj_3">
+                <p>otra descripción</p>
+                <img class="perfil3"src="{{ asset('images/pjs/perfil_helio.png') }}" alt="">
+            </div>
         </div>
-
-        <img class="n_4" src="{{ asset('images/default/btnMenu/btn.png') }}" alt="Pj4">
-        <div class="pj_4">
-            <p>última descripción</p>
-        </div> --}}
 
     </div>
 @endsection

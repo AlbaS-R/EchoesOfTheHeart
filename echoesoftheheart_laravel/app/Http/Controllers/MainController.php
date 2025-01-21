@@ -20,33 +20,33 @@ class MainController extends Controller
     {
         $news = UpdateNews::all();
 
-    // progressbar
-    $user = User::find(Auth::user()->id);
-    $progreso = $user->progreso()->first();
+        // progressbar
+        $user = User::find(Auth::user()->id);
+        $progreso = $user->progreso()->first();
 
-    //Para checkear si esta null el capitulo_id que haga que progreso sea 0, si no, le da el progreso.
-    if (!$progreso) {
+        //Para checkear si esta null el capitulo_id que haga que progreso sea 0, si no, le da el progreso.
+        if (!$progreso) {
 
-        $capitulo_id = null;
-        $progreso = 0;
-    } else {
-        $capitulo_id = $progreso->capitulo_id;
-    }
-
-    if ($capitulo_id !== null) {
-        $totalDialogos = Dialogo::where('capitulo_id', $capitulo_id)->count();
-        if ($totalDialogos > 0) {
-            $porcentaje = ($progreso->dialogo_id / $totalDialogos) * 100;
-            $progreso = round($porcentaje, 2);
+            $capitulo_id = null;
+            $progreso = 0;
         } else {
+            $capitulo_id = $progreso->capitulo_id;
+        }
+
+        if ($capitulo_id !== null) {
+            $totalDialogos = Dialogo::where('capitulo_id', $capitulo_id)->count();
+            if ($totalDialogos > 0) {
+                $porcentaje = ($progreso->dialogo_id / $totalDialogos) * 100;
+                $progreso = round($porcentaje, 2);
+            } else {
+                $progreso = 0;
+            }
+        } else {
+
             $progreso = 0;
         }
-    } else {
 
-        $progreso = 0;
-    }
-
-    return view('inici.principal', ['news' => $news, 'progreso' => $progreso]);
+        return view('inici.principal', ['news' => $news, 'progreso' => $progreso]);
     }
     public function getCapitulos()
     {
@@ -134,52 +134,32 @@ class MainController extends Controller
         return response()->json(['progreso' => $progreso]);
     }
 
-    public function reiniciarProgreso($capitulo_id){
-    $user = User::find(Auth::id());
-    $progreso = $user->progreso()->where('capitulo_id', $capitulo_id)->first();
+    public function reiniciarProgreso($capitulo_id)
+    {
+        $user = User::find(Auth::id());
+        $progreso = $user->progreso()->where('capitulo_id', $capitulo_id)->first();
 
-    if ($progreso) {
+        if ($progreso) {
 
-        if ($progreso->reinicios >= 5) {
-            return redirect()->route('capitulos')->with('error', 'Has alcanzado el límite de reinicios para este capítulo.');
+            if ($progreso->reinicios >= 5) {
+                return redirect()->route('capitulos')->with('error', 'Has alcanzado el límite de reinicios para este capítulo.');
+            }
+
+            $progreso->reinicios += 1;
+
+            $progreso->dialogo_id = 1;
+            $progreso->save();
         }
 
-        $progreso->reinicios += 1;
-
-        $progreso->dialogo_id = 1;
-        $progreso->save();
-    }
-
-    return redirect()->route('capitulos')->with('success', 'Capítulo reiniciado exitosamente.');
+        return redirect()->route('capitulos')->with('success', 'Capítulo reiniciado exitosamente.');
     }
 
     public function paginaImagen(Request $request)
-{
-    $user = User::find(Auth::id());
-    $imagenes = $user->imagenes()->get();
+    {
+        $user = User::find(Auth::id());
+        $imagenes = $user->imagenes()->get();
 
-    if ($request->has('foto_id')) {
-        $foto_id = $request->input('foto_id');
-
-
-        $existe = DB::table('foto_user')
-                    ->where('user_id', $user->id)
-                    ->where('foto_id', $foto_id)
-                    ->exists();
-
-        if ($existe) {
-
-            return back()->withErrors(['error' => 'Esta imagen ya está asociada con tu cuenta.']);
-        } else {
-            DB::table('foto_user')->insert([
-                'user_id' => $user->id,
-                'foto_id' => $foto_id
-            ]);
-        }
+        return view('imagenes.p_imagenes', ['imagenes' => $imagenes]);
     }
-
-    return view('imagenes.p_imagenes', ['imagenes' => $imagenes]);
-}
-
 
 }

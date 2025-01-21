@@ -64,6 +64,7 @@ img.jrrnTuto, img.jrrnCap1{
 
 .modal {
     display: none; /* Inicialmente oculto */
+    font-family: GreekFont;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -72,7 +73,6 @@ img.jrrnTuto, img.jrrnCap1{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #imagenAmpliada {

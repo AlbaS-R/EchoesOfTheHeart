@@ -25,7 +25,7 @@
                 </div>
 
                 <div id="char_3" style="display: none;">
-                    <img id="char_3_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/ajax.png" style="height: 400px;">
+                    <img id="char_3_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/ajax_main.png" style="height: 400px;">
                     <div class="textbox" id="ajax_text"></div>
                 </div>
 
