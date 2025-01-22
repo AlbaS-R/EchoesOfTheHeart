@@ -1,3 +1,8 @@
+@font-face {
+    font-family: GreekFont;
+    src: url(/fonts/OLYMB.TTF);
+  }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -12,6 +17,7 @@
     background-image: url('/css/imagenes/pjs/pjs_desc.png');
     background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
     background-repeat: no-repeat;
+    flex-direction: column;
     width: 808px;
     height: 275px;
     display: flex;
@@ -19,6 +25,15 @@
     align-items: center; /* Centra el contenido verticalmente */
     color: rgb(0, 0, 0); /* Texto visible sobre la imagen de fondo */
     left: 80px;
+    font-family: GreekFont;
+    word-break: normal;
+}
+.descripcion {
+    margin-top: 50px;
+    max-width: 400px; /* Define el límite del ancho del texto */
+    word-wrap: break-word; /* Asegura que las palabras largas se dividan si es necesario */
+    overflow: hidden; /* Oculta el contenido que exceda el límite si no cabe */
+    text-overflow: ellipsis; /* Opcional: agrega "..." al final si se recorta el texto */
 }
 
 .perfil1{
