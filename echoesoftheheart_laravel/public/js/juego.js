@@ -60,19 +60,19 @@ function mostrar(data) {
     // background image handling
     $(".juego").css("background-image", "url(" + data.url_fondo + ")");
 
-    // hide characters
-    if (data.esconder != "") {
-        if (data.esconder == "todos") {
-            $("#char_2").css("display", "none");
-            $("#char_3").css("display", "none");
-            $("#char_4").css("display", "none");
-        } else {
-            let personajes = data.esconder.split(",");
-            personajes.forEach(function (personaje) {
-                $("#char_" + personaje).css("display", "none");
-            });
-        }
-    }
+    // // hide characters
+    // if (data.esconder != "") {
+    //     if (data.esconder == "todos") {
+    //         $("#char_2").css("display", "none");
+    //         $("#char_3").css("display", "none");
+    //         $("#char_4").css("display", "none");
+    //     } else {
+    //         let personajes = data.esconder.split(",");
+    //         personajes.forEach(function (personaje) {
+    //             $("#char_" + personaje).css("display", "none");
+    //         });
+    //     }
+    // }
 
     textOrder = data.orden_origen
     document.getElementById("esencias").innerHTML = data.esencias

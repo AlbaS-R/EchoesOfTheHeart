@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('url_fondo');
             $table->string('url_musica');
             $table->foreignId('personaje_id')->nullable();
-            $table->string('esconder')->nullable();
+            $table->string('mostrar')->nullable();
 
             $table->text('html');
             $table->text('php')->nullable();

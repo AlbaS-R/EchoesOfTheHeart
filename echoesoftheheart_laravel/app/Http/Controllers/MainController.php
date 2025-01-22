@@ -12,7 +12,8 @@ use App\Models\UpdateNews;
 use App\Models\Capitulo;
 use App\Models\Personaje;
 use App\Models\Dialogo;
-
+use Barryvdh\Debugbar\Facades\Debugbar as FacadesDebugbar;
+use DebugBar\DebugBar;
 
 class MainController extends Controller
 {
@@ -84,10 +85,22 @@ class MainController extends Controller
     }
     public function getPersonajes()
     {
-        $personajes = Personaje::all();
-        $relaciones = User::find(Auth::id())->personajes()->get();
+        $user = User::find(Auth::id());
+        $personajes = $user->personajes()->get();
 
-        return view('personajes.p_personajes', ['personajes' => $personajes, 'relaciones' => $relaciones]);
+        $listaPersonajes = [];
+        foreach ($personajes as $personaje) {
+            array_push(
+                $listaPersonajes,
+                array(
+                    "id" => $personaje->id,
+                    "lovemeter" => $personaje->pivot->lovemeter,
+                )
+            );
+        }
+
+
+        return view('personajes.p_personajes', ['personajes' => $listaPersonajes]);
     }
 
     public function updateName(Request $request)
@@ -154,12 +167,11 @@ class MainController extends Controller
         return redirect()->route('capitulos')->with('success', 'Capítulo reiniciado exitosamente.');
     }
 
-    public function paginaImagen(Request $request)
+    public function paginaImagen()
     {
         $user = User::find(Auth::id());
         $imagenes = $user->imagenes()->get();
 
         return view('imagenes.p_imagenes', ['imagenes' => $imagenes]);
     }
-
 }

@@ -87,7 +87,7 @@ class GameController extends Controller
             $next_dialog->html = str_replace("[Nombre del usuario]", Auth::user()->name, $next_dialog->html);
         }
 
-        // ejecutar PHP
+        // ejecutar PHP (imagenes y cosas)
         eval($next_dialog->php);
         unset($next_dialog->php);
 
@@ -99,6 +99,11 @@ class GameController extends Controller
             $user->esencias = $user->esencias - 1;
             $user->save();
         }
+
+        // relacion con personajes
+        if(!$user->personajes()->where('personaje_id', $next_dialog->personaje_id)->exists() and $next_dialog->personaje_id != 1){
+            $user->personajes()->attach($next_dialog->personaje_id,['lovemeter' => 0]);
+        };
 
         if(!$next_dialog->es_opcion){
             // actualizar el progreso

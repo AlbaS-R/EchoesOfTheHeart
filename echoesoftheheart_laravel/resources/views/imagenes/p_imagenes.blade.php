@@ -18,12 +18,12 @@
             </div>
 
         </div>
+        <div id="imagenModal" class="modal" onclick="cerrarModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="imagenAmpliada">
+        </div>
+    </div>
 
-    </div>
-    <div id="imagenModal" class="modal" onclick="cerrarModal()">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="imagenAmpliada">
-    </div>
     <script>
 
         function ampliarImagen(src) {
