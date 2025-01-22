@@ -57,9 +57,11 @@
     justify-content: center;
     align-items: center;
     z-index: 7;
+    font-family: GreekFont;
 }
 
 .modal-content {
+    font-family: GreekFont;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
