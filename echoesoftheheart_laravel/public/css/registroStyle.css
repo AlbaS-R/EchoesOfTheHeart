@@ -69,7 +69,7 @@ input {
 button {
     font-family: GreekFont;
     font-size: larger;
-    margin: 5px;
+    margin-left: 200px;
 }
 
 .buttons-container {
