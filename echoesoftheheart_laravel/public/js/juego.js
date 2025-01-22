@@ -60,19 +60,31 @@ function mostrar(data) {
     // background image handling
     $(".juego").css("background-image", "url(" + data.url_fondo + ")");
 
-    // // hide characters
-    // if (data.esconder != "") {
-    //     if (data.esconder == "todos") {
-    //         $("#char_2").css("display", "none");
-    //         $("#char_3").css("display", "none");
-    //         $("#char_4").css("display", "none");
-    //     } else {
-    //         let personajes = data.esconder.split(",");
-    //         personajes.forEach(function (personaje) {
-    //             $("#char_" + personaje).css("display", "none");
-    //         });
-    //     }
-    // }
+    // show characters
+    if (data.mostrar && data.mostrar !== "") {
+        if (data.mostrar === "todos") {
+            // Mostrar todos los personajes si el valor es "todos"
+            $("#char_2").css("display", "flex");
+            $("#char_3").css("display", "flex");
+            $("#char_4").css("display", "flex");
+        } else {
+            // Ocultar todos los personajes por defecto
+            $("#char_2, #char_3, #char_4").css("display", "none");
+
+            // Mostrar solo los personajes cuyas IDs están en data.mostrar
+            let personajes = data.mostrar.split(",");
+            personajes.forEach(function (personaje) {
+                let charElement = $("#char_" + personaje);
+                if (charElement.length) {
+                    charElement.css("display", "flex");
+                }
+            });
+        }
+    } else {
+        // Si data.mostrar está vacío, oculta todos los personajes
+        $("#char_2, #char_3, #char_4").css("display", "none");
+    }
+
 
     textOrder = data.orden_origen
     document.getElementById("esencias").innerHTML = data.esencias

@@ -21,13 +21,13 @@ body {
 .img1 {
     width: auto;
     /* Mantiene el ancho de la imagen automáticamente según su proporción */
-    height: 141vh;
+    height: 227%;
     /* 100% de la altura de la pantalla */
     object-fit: cover;
     /* Ajusta la imagen manteniendo la relación de aspecto */
     position: absolute;
     /* Posicionamos la imagen de manera absoluta */
-    left: 400px;
+    left: 7%;
     /* Alineamos la imagen a la izquierda */
     top: 0;
     /* Alineamos la imagen a la parte superior */
@@ -38,13 +38,14 @@ body {
 .img2 {
     width: auto;
     /* Mantiene el ancho de la imagen automáticamente según su proporción */
-    height: 141vh;
+    height: 227%;
     /* 100% de la altura de la pantalla */
     object-fit: cover;
     /* Ajusta la imagen manteniendo la relación de aspecto */
     position: absolute;
     /* Posicionamos la imagen de manera absoluta */
-    right: 400px;
+    right:7%;
+
     /* Alineamos la imagen a la derecha */
     top: 0;
     /* Alineamos la imagen a la parte superior */

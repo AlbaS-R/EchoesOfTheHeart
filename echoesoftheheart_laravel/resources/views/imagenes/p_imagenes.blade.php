@@ -8,9 +8,8 @@
                 <p class="titulos">Tutorial</p>
                 <div class="imgsTuto">
                     @foreach ($imagenes as $imagen)
-                        <div class="marco">
-                            <img class="imagen" src="{{ $imagen->url }}" alt="Imagen del usuario"
-                                onclick="ampliarImagen('{{ $imagen->url }}')">
+                        <div class="marco" onclick="ampliarImagen('{{ $imagen->url }}')">
+                            <img class="imagen" src="{{ $imagen->url }}" alt="Imagen del usuario">
                             <img class="marcoImg" src="{{ asset('images/galeria/marcoImg.png') }}" alt="Marco">
                         </div>
                     @endforeach
@@ -25,7 +24,6 @@
     </div>
 
     <script>
-
         function ampliarImagen(src) {
             const modal = document.getElementById('imagenModal');
             const modalImg = document.getElementById('imagenAmpliada');

@@ -18,20 +18,29 @@ body {
 /* Ajuste de las imágenes para que se adapten a la altura de la pantalla */
 .img1, .img2 {
     width: auto;
-    height: 100vh;  /* 100% de la altura de la ventana */
+    /* Mantiene el ancho de la imagen automáticamente según su proporción */
+    height: 160%;
+    /* 100% de la altura de la pantalla */
     object-fit: cover;
+    /* Ajusta la imagen manteniendo la relación de aspecto */
     position: absolute;
+    /* Posicionamos la imagen de manera absoluta */
+
+    /* Alineamos la imagen a la izquierda */
     top: 0;
+    /* Alineamos la imagen a la parte superior */
+    overflow-y: scroll;
+    /* Vertical scroll */
 }
 
 /* Alineación de la imagen img1 a la izquierda */
 .img1 {
-    left: 400px;
-}
+    left: 10%;
+} 
 
 /* Alineación de la imagen img2 a la derecha */
 .img2 {
-    right: 400px;
+    right:10%;
 }
 
 /* Contenido del header empieza aquí */
@@ -156,13 +165,13 @@ body {
 }
 
 .footer {
-    margin-top: 50px;
-    position: fixed bottom;
+    margin-top: 10px;
+    gap: 10px;
+    position: relative; /* Cambia de fixed a relative */
     bottom: 0;
-    width: 100%;
+    width: 118%;
     height: 125px;
     background-color: rgba(255, 238, 223, 0.7);
     text-align: center;
     padding: 10px;
-    z-index: 10;
 }
