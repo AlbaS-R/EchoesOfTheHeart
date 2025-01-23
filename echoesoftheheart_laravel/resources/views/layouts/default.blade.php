@@ -9,8 +9,7 @@
     <title>Echoes Of The Heart</title>
 </head>
 <body>
-    <img class="img1" src="{{ asset('images/principal/pilar.png') }}" alt="Imagen Principal">
-    <img class="img2"  src="{{ asset('images/principal/pilar.png') }}" alt="Imagen Principal">
+
     <div class="usuario">
         <div class="logout-button">
             <form action="{{ route('logout') }}" method="POST">
