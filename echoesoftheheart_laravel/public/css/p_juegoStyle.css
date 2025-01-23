@@ -89,7 +89,8 @@
 }
 
 #char_2_img, #char_3_img, #char_4_img {
-    height: 400px;
+    
+    transform: scale(1.3);
     z-index: 1;
 }
 

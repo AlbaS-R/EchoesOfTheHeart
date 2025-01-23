@@ -20,7 +20,7 @@
             {{-- div para personajes --}}
             <div id="characters">
                 <div id="char_2" style="display: none;">
-                    <img id="char_2_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/amongus.png" style="height: 400px;">
+                    <img id="char_2_img" src="https://echoesoftheheart.subpolygon.com/media_juego/personajes/amaranta_main.png" style="height: 400px;">
                     <div class="textbox" id="amaranta_text"></div>
                 </div>
 
